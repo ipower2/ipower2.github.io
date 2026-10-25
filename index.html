@@ -1,0 +1,2135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script data-tmly-media-guard="1">(function(){"use strict";
+var T=window.__tmly||(window.__tmly=(function(){
+var o={},n=String(window.name||"");
+if(n.slice(0,5)==="tmly:"){n.slice(5).split("&").forEach(function(kv){
+var i=kv.indexOf("=");if(i>0){o[kv.slice(0,i)]=kv.slice(i+1)}})}
+return o})());
+if(T.presentation!=="preview"){return}
+var K="tmly:media-muted:"+String(location.pathname).replace(/[^/]*$/,"");
+var muted=false;try{muted=localStorage.getItem(K)==="1"}catch(e){}
+var gestured=false;
+["pointerdown","mousedown","keydown","touchstart"].forEach(function(t){
+document.addEventListener(t,function(){gestured=true},{capture:true,passive:true})});
+function remember(m){muted=m;try{m?localStorage.setItem(K,"1"):localStorage.removeItem(K)}catch(e){}}
+function announcePaused(el){try{el.dispatchEvent(new Event("pause"))}catch(e){}}
+function harden(el){
+el.autoplay=false;el.removeAttribute("autoplay");
+if(el.getAttribute("preload")==="auto"){el.setAttribute("preload","none")}
+if(muted){el.muted=true}
+if(!gestured&&!el.paused){try{el.pause()}catch(e){}}}
+var play=HTMLMediaElement.prototype.play;
+HTMLMediaElement.prototype.play=function(){
+if(!gestured){announcePaused(this);
+return Promise.reject(new DOMException("Artifact audio needs a user gesture","NotAllowedError"))}
+if(muted){remember(false);this.muted=false}
+return play.apply(this,arguments)};
+var acProtos=[];
+function guardAC(n){
+var N=window[n];if(!N||!N.prototype){return}
+if(acProtos.indexOf(N.prototype)<0){acProtos.push(N.prototype);
+var res=N.prototype.resume;
+if(typeof res==="function"){N.prototype.resume=function(){
+if(!gestured){return Promise.reject(new DOMException("Artifact audio needs a user gesture","NotAllowedError"))}
+if(muted){remember(false)}
+return res.apply(this,arguments)}}}
+var W=function(o){var c=arguments.length?new N(o):new N();
+if(!gestured){try{c.suspend()}catch(e){}}return c};
+W.prototype=N.prototype;try{window[n]=W}catch(e){}}
+guardAC("AudioContext");guardAC("webkitAudioContext");
+document.addEventListener("play",function(e){
+var el=e.target;if(el instanceof HTMLMediaElement&&!gestured){try{el.pause()}catch(err){}}},true);
+document.addEventListener("pause",function(e){
+if(e.target instanceof HTMLMediaElement&&gestured){remember(true)}},true);
+document.addEventListener("volumechange",function(e){
+var el=e.target;if(el instanceof HTMLMediaElement&&gestured){remember(el.muted||el.volume===0)}},true);
+function sweep(n){if(n&&n.querySelectorAll){var l=n.querySelectorAll("audio,video");
+for(var i=0;i<l.length;i++){harden(l[i])}}}
+new MutationObserver(function(rs){for(var i=0;i<rs.length;i++){var a=rs[i].addedNodes;
+for(var j=0;j<a.length;j++){var n=a[j];
+if(n instanceof HTMLMediaElement){harden(n)}else{sweep(n)}}}})
+.observe(document.documentElement,{childList:true,subtree:true});
+document.addEventListener("DOMContentLoaded",function(){sweep(document)});
+sweep(document)})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kumba Handloom House · Bridal, Soft Silk &amp; Cotton Sarees in Kumbakonam</title>
+<meta name="description" content="Kumba Handloom House — a family silk saree showroom in Kumbakonam since the 1980s. Bridal silks, soft silk and cotton handloom sarees, chosen thread by thread.">
+<meta name="theme-color" content="#191614">
+<meta property="og:title" content="Kumba Handloom House · Silk &amp; Bridal Sarees, Kumbakonam">
+<meta property="og:description" content="Bridal silks, soft silk and cotton handloom sarees — a family showroom in Kumbakonam since the 1980s.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23191614'/%3E%3Cpath d='M16 6l8 10-8 10-8-10z' fill='none' stroke='%23E8A98C' stroke-width='1.6'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23B24A2B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..600&family=Archivo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!--
+╔══════════════════════════════════════════════════════════════════════════╗
+║                                                                          ║
+║   ★★★  PHOTOS — THIS IS THE ONLY PLACE YOU EDIT IMAGE LINKS  ★★★         ║
+║                                                                          ║
+║   To change a picture, change the file name inside  file:  below.        ║
+║   Nothing else on the page needs to be touched.                          ║
+║                                                                          ║
+║   Example:                                                                ║
+║       file: "images/hero.jpg"        ←  the picture showing now          ║
+║       file: "images/hero-new.jpg"    ←  your new picture                 ║
+║                                                                          ║
+║   The new photo must be sitting in the  images/  folder next to this     ║
+║   file, and the spelling must match exactly (lower-case, no spaces).     ║
+║                                                                          ║
+║   focal:  which part of the photo stays visible when it is cropped.      ║
+║           "center 50%" = middle.  "center 20%" = higher up (more head).   ║
+║           "center 80%" = lower down (more border/pallu).                 ║
+║                                                                          ║
+║   If a link is wrong, the page keeps showing the previous photo          ║
+║   instead of a broken box. Safe to experiment.                           ║
+║                                                                          ║
+╚══════════════════════════════════════════════════════════════════════════╝
+-->
+
+<!--
+╔══════════════════════════════════════════════════════════════════════════╗
+║                                                                          ║
+║★★★  ADMIN NOTE — STOCK PHOTO CHECKLIST  ★★★                              ║
+║                                                                          ║
+║This note is a COMMENT. Visitors never see it on the page.                ║
+║                                                                          ║
+║SUMMARY                                                                   ║
+║  STOCK — still to replace ...............   9 of 10                      ║
+║  OWN PHOTO — done .......................   0 of 10                      ║
+║  INTENTIONALLY BLANK — no photo yet .....   1 of 10                      ║
+║                                                                          ║
+║  Totals always add up to 10 slots.                                       ║
+║                                                                          ║
+║WHAT THE FLAGS MEAN                                                       ║
+║  [STOCK — replace with your own photo]  = borrowed picture, swap it      ║
+║  [OWN PHOTO — done]                     = your own photo, finished       ║
+║  [BLANK BY CHOICE — real shop photo pending]                             ║
+║      Deliberately empty. The page shows a designed placeholder           ║
+║      panel (not a photo) until a real showroom shot is supplied.         ║
+║                                                                          ║
+║HOW TO KEEP THIS UP TO DATE                                               ║
+║  1. Swap the picture (change  file:  in the slot below).                 ║
+║  2. Change that slot's flag to [OWN PHOTO — done].                       ║
+║  3. Move one number in SUMMARY from one line to another,                 ║
+║     so the three lines still total 10.                                   ║
+║  4. Supplying a real showroom photo? Change the                          ║
+║     heritage-boutique flag from [BLANK BY CHOICE] to [OWN PHOTO]         ║
+║     and move one number from INTENTIONALLY BLANK to OWN PHOTO.           ║
+║                                                                          ║
+║SLOT LIST (10 slots)                                                      ║
+║   1. hero ............... STOCK                                          ║
+║   2. heritage-boutique .. INTENTIONALLY BLANK  (placeholder panel)       ║
+║   3. heritage-loom ...... STOCK                                          ║
+║   4. col-bridal ......... STOCK                                          ║
+║   5. col-softsilk ....... STOCK                                          ║
+║   6. col-cotton ......... STOCK                                          ║
+║   7. best-1 ............. STOCK                                          ║
+║   8. best-2 ............. STOCK                                          ║
+║   9. best-3 ............. STOCK                                          ║
+║  10. texture-band ....... STOCK                                          ║
+║                                                                          ║
+╚══════════════════════════════════════════════════════════════════════════╝
+-->
+<script>
+window.PHOTOS = {
+
+  /* ① HERO — the big picture at the very top of the page.
+        Portrait 4:5 · about 1100 × 1400 px */
+  /* [STOCK — replace with your own photo] */
+  "hero": {
+    name:   "Hero — top of the page",
+    file:   "images/hero.jpg",
+    alt:    "Model wearing a gold silk saree against a deep green backdrop",
+    focal:  "center 22%",
+    size:   "Portrait 4:5 — 1100 × 1400 px"
+  },
+
+  /* ② OUR STORY — the large picture beside the story text.
+        Portrait 4:5 · about 1000 × 1250 px
+
+        ▸ THIS SLOT IS INTENTIONALLY BLANK. No photo is shown on purpose —
+          the page displays a designed panel reading "Photo of our Kumbakonam
+          showroom coming soon" instead of a borrowed shop picture.
+          To fill it: put your showroom photo in  images/  and type its name
+          below, e.g.  file: "images/shop-front.jpg",  — the panel then
+          disappears and your photo takes its place automatically.
+          Leave  file: ""  to keep the panel. */
+  /* [BLANK BY CHOICE — real shop photo pending] */
+  "heritage-boutique": {
+    name:   "Our Story — showroom photo (INTENTIONALLY BLANK)",
+    file:   "",
+    alt:    "Interior of the Kumba Handloom House showroom in Kumbakonam",
+    focal:  "center 50%",
+    size:   "Portrait 4:5 — 1000 × 1250 px"
+  },
+
+  /* ③ OUR STORY — the small overlapping handloom picture.
+        Landscape 5:4 · about 800 × 640 px */
+  /* [STOCK — replace with your own photo] */
+  "heritage-loom": {
+    name:   "Our Story — handloom close-up (small inset)",
+    file:   "images/heritage-loom.jpg",
+    alt:    "A handloom with red silk yarn and jacquard punch cards",
+    focal:  "center 50%",
+    size:   "Landscape 5:4 — 800 × 640 px"
+  },
+
+  /* ④ COLLECTIONS — three cards, in the order they appear on the page.
+        All portrait 4:5 · about 760 × 950 px */
+
+  /* [STOCK — replace with your own photo] */
+  "col-bridal": {
+    name:   "Collection 1 — Bridal",
+    file:   "images/col-bridal.jpg",
+    alt:    "Bridal red and gold silk saree with traditional styling",
+    focal:  "center 35%",
+    size:   "Portrait 4:5 — 760 × 950 px"
+  },
+
+  /* [STOCK — replace with your own photo] */
+  "col-softsilk": {
+    name:   "Collection 2 — Soft Silk",
+    file:   "images/col-softsilk.jpg",
+    alt:    "Peacock teal soft silk saree with a fine gold border",
+    focal:  "center 50%",
+    size:   "Portrait 4:5 — 760 × 950 px"
+  },
+
+  /* [STOCK — replace with your own photo] */
+  "col-cotton": {
+    name:   "Collection 3 — Cotton & Handloom",
+    file:   "images/col-cotton.jpg",
+    alt:    "Woman wearing a handloom cotton saree in soft pastel tones",
+    focal:  "center 40%",
+    size:   "Portrait 4:5 — 760 × 950 px"
+  },
+
+  /* ⑤ FEATURED PIECES — three cards.
+        All portrait 4:5 · about 820 × 1025 px */
+
+  /* [STOCK — replace with your own photo] */
+  "best-1": {
+    name:   "Featured piece 1",
+    file:   "images/best-1.jpg",
+    alt:    "Teal and peacock blue dual-tone silk saree",
+    focal:  "center 45%",
+    size:   "Portrait 4:5 — 820 × 1025 px"
+  },
+
+  /* [STOCK — replace with your own photo] */
+  "best-2": {
+    name:   "Featured piece 2",
+    file:   "images/best-2.jpg",
+    alt:    "Teal Banarasi-style silk saree with gold zari work",
+    focal:  "center 45%",
+    size:   "Portrait 4:5 — 820 × 1025 px"
+  },
+
+  /* [STOCK — replace with your own photo] */
+  "best-3": {
+    name:   "Featured piece 3",
+    file:   "images/best-3.jpg",
+    alt:    "Gold tissue silk saree with a green blouse",
+    focal:  "center 45%",
+    size:   "Portrait 4:5 — 820 × 1025 px"
+  },
+
+  /* ⑥ WHY-US BAND — a wide fabric texture behind the dark ink band.
+        Landscape 16:9 · about 1600 × 900 px */
+  /* [STOCK — replace with your own photo] */
+  "texture-band": {
+    name:   "Dark band background texture",
+    file:   "images/texture-band.jpg",
+    alt:    "",
+    focal:  "center 50%",
+    size:   "Landscape 16:9 — 1600 × 900 px"
+  }
+
+  /* Spare: images/accent.jpg is an unused silk close-up you can use later. */
+
+};
+</script>
+
+<script>
+/* Applies the photo list above to the page. You do not need to edit this. */
+(function(){
+  function apply(){
+    var all = window.PHOTOS || {};
+    for (var slot in all){
+      if (!Object.prototype.hasOwnProperty.call(all, slot)) continue;
+      var c = all[slot] || {};
+
+      /* A slot with no file is blank on purpose: show its placeholder panel
+         (if it has one) and keep the empty <img> out of the layout.
+         Give the slot a file and this branch flips it back to a photo. */
+      var blanks = document.querySelectorAll('[data-blank-slot="' + slot + '"]');
+      if (!c.file){
+        for (var b = 0; b < blanks.length; b++) blanks[b].removeAttribute('hidden');
+        var hid = document.querySelectorAll('[data-photo="' + slot + '"]');
+        for (var h = 0; h < hid.length; h++) hid[h].setAttribute('hidden','');
+        continue;
+      }
+      for (var b2 = 0; b2 < blanks.length; b2++) blanks[b2].setAttribute('hidden','');
+
+      var imgs = document.querySelectorAll('[data-photo="' + slot + '"]');
+      for (var i = 0; i < imgs.length; i++){
+        (function(el){
+          if (!el.getAttribute('data-fallback')) el.setAttribute('data-fallback', el.getAttribute('src') || '');
+          if (el.getAttribute('src') !== c.file) el.setAttribute('src', c.file);
+          if (c.alt) el.setAttribute('alt', c.alt);
+          if (c.focal) el.style.setProperty('--focal', c.focal);
+          el.removeAttribute('hidden');
+          el.addEventListener('error', function(){
+            var fb = el.getAttribute('data-fallback');
+            if (fb && el.getAttribute('src') !== fb) el.setAttribute('src', fb);
+          });
+        })(imgs[i]);
+      }
+
+      var bgs = document.querySelectorAll('[data-photo-bg="' + slot + '"]');
+      for (var j = 0; j < bgs.length; j++){
+        bgs[j].style.backgroundImage = "url('" + c.file + "')";
+        if (c.focal) bgs[j].style.backgroundPosition = c.focal;
+      }
+    }
+  }
+  window.applyPhotos = apply;
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', apply);
+  else apply();
+})();
+</script>
+
+<style>
+/* ==========================================================================
+   KUMBA HANDLOOM HOUSE — EDITORIAL SYSTEM
+   Palette: bone paper · warm ink · terracotta
+   Type:    Bodoni Moda (high-contrast display) · Archivo (grotesque)
+   ========================================================================== */
+
+:root{
+  --ink:#191614;        /* text + dark surfaces  */
+  --ink-2:#2A2420;      /* raised dark surface   */
+  --terra:#B24A2B;      /* accent on light (4.7:1 on paper) */
+  --terra-deep:#8C3820; /* accent hover          */
+  --terra-soft:#E8A98C; /* accent on ink (9.1:1) */
+  --paper:#F6F0E6;      /* page ground           */
+  --paper-2:#EBE3D5;    /* alternate surface     */
+  --muted:#5A5249;      /* secondary text (6.7:1 on paper) */
+  --line:#D8CDBB;       /* hairlines on paper    */
+  --line-ink:rgba(246,240,230,.16); /* hairlines on ink */
+
+  --disp:'Bodoni Moda','Didot','Bodoni MT',Georgia,serif;
+  --sans:'Archivo',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+
+  --wrap:1340px;
+  --pad:clamp(18px,4.6vw,56px);
+  --sec:clamp(62px,8vw,116px);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html:focus-within{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-weight:400;
+  font-size:clamp(15px,1.02vw,16.5px);line-height:1.7;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+body.locked{overflow:hidden}
+img{max-width:100%;display:block;height:auto}
+h1,h2,h3,h4{font-family:var(--disp);font-weight:400;margin:0;line-height:1.06;
+  letter-spacing:-.012em;font-optical-sizing:auto}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+ul,ol{margin:0;padding:0;list-style:none}
+::selection{background:var(--terra);color:#fff}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+
+/* ---------- primitives ---------- */
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--pad)}
+.sec{padding-block:var(--sec);position:relative;scroll-margin-top:72px}
+
+.lbl{
+  font-family:var(--sans);font-size:.62rem;font-weight:600;
+  letter-spacing:.34em;text-transform:uppercase;color:var(--terra);
+  display:inline-flex;align-items:center;gap:.85rem;
+}
+.lbl::before{content:"";width:22px;height:1px;background:currentColor;opacity:.7;flex:none}
+.lbl.on-ink{color:var(--terra-soft)}
+
+.h-xl{font-size:clamp(2.5rem,6.6vw,5.4rem);line-height:.98;letter-spacing:-.03em}
+.h-lg{font-size:clamp(1.9rem,4.4vw,3.5rem);line-height:1.03;letter-spacing:-.024em}
+.h-md{font-size:clamp(1.45rem,2.6vw,2.1rem);line-height:1.12;letter-spacing:-.016em}
+
+.body-l{color:var(--muted);font-size:clamp(.95rem,1.12vw,1.06rem);line-height:1.8;max-width:58ch}
+em{font-style:italic}
+
+/* woven hairline — the handloom motif */
+.weave{
+  height:9px;width:100%;
+  background-image:
+    repeating-linear-gradient(45deg,var(--line) 0 1px,transparent 1px 7px),
+    repeating-linear-gradient(-45deg,var(--line) 0 1px,transparent 1px 7px);
+  opacity:.55;
+}
+.weave.on-ink{background-image:
+    repeating-linear-gradient(45deg,var(--line-ink) 0 1px,transparent 1px 7px),
+    repeating-linear-gradient(-45deg,var(--line-ink) 0 1px,transparent 1px 7px)}
+
+/* lozenge ornament */
+.loz{display:inline-block;width:9px;height:9px;border:1px solid currentColor;
+  transform:rotate(45deg);flex:none}
+
+.skip{position:absolute;left:-9999px;top:0;z-index:300;background:var(--ink);
+  color:var(--paper);padding:.9rem 1.3rem;font-size:.72rem;letter-spacing:.18em;
+  text-transform:uppercase}
+.skip:focus{left:1rem;top:1rem}
+
+/* ---------- ticker / top sliver ---------- */
+.ticker{background:var(--ink);color:rgba(246,240,230,.62);font-size:.62rem;
+  letter-spacing:.22em;text-transform:uppercase;padding-block:.5rem}
+.ticker .wrap{display:flex;justify-content:space-between;align-items:center;gap:1.4rem;flex-wrap:wrap}
+.ticker a{transition:color .2s var(--ease)}
+.ticker a:hover{color:var(--terra-soft)}
+.tick-l{display:flex;gap:1.6rem;align-items:center;flex-wrap:wrap}
+.tick-l span{display:inline-flex;align-items:center;gap:.6rem}
+.tick-l .loz{width:5px;height:5px;border-color:var(--terra-soft);opacity:.8}
+
+/* ---------- header: centred wordmark, nav split either side ---------- */
+.site-head{
+  background:var(--paper);border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:120;
+  transition:box-shadow .3s var(--ease),background .3s var(--ease);
+}
+.head-inner{
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+  gap:clamp(1rem,3vw,2.6rem);
+  padding-block:clamp(1.05rem,2vw,1.55rem);
+  transition:padding-block .3s var(--ease);
+}
+.site-head.scrolled{box-shadow:0 1px 0 rgba(25,22,20,.07),0 14px 34px -26px rgba(25,22,20,.4)}
+.site-head.scrolled .head-inner{padding-block:.62rem}
+
+.nav-l,.nav-r{display:flex;align-items:center;gap:clamp(.9rem,2vw,1.9rem)}
+.nav-l{justify-self:start}
+.nav-r{justify-self:end}
+.nav-l a,.nav-r a:not(.hdr-cta){
+  font-size:.65rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);position:relative;padding-block:.4rem;transition:color .2s var(--ease);
+}
+.nav-l a::after,.nav-r a:not(.hdr-cta)::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--terra);
+  transform:scaleX(0);transform-origin:left;transition:transform .32s var(--ease);
+}
+.nav-l a:hover,.nav-r a:not(.hdr-cta):hover,.nav-l a.active,.nav-r a.active{color:var(--ink)}
+.nav-l a:hover::after,.nav-r a:hover::after,.nav-l a.active::after,.nav-r a.active::after{transform:scaleX(1)}
+
+.brand{justify-self:center;text-align:center;display:block;padding-inline:.4rem}
+.brand .bname{
+  display:block;font-family:var(--disp);font-weight:400;
+  font-size:clamp(.95rem,1.5vw,1.4rem);line-height:1.05;
+  letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;
+}
+.brand .bsub{
+  display:block;margin-top:.4rem;font-size:.5rem;font-weight:500;
+  letter-spacing:.38em;text-transform:uppercase;color:var(--terra);white-space:nowrap;
+}
+
+.hdr-cta{
+  display:inline-flex;align-items:center;gap:.5rem;
+  border:1px solid var(--ink);padding:.55rem .95rem;
+  font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  transition:background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease);
+}
+.hdr-cta svg{width:13px;height:13px;flex:none}
+.hdr-cta:hover{background:var(--terra);border-color:var(--terra);color:#fff}
+
+.burger{
+  display:none;justify-self:end;width:40px;height:34px;
+  align-items:center;justify-content:center;
+}
+.burger span{display:block;width:22px;height:1.5px;background:var(--ink);position:relative;
+  transition:background .2s var(--ease)}
+.burger span::before,.burger span::after{
+  content:"";position:absolute;left:0;width:22px;height:1.5px;background:var(--ink);
+  transition:transform .3s var(--ease);
+}
+.burger span::before{top:-6px}
+.burger span::after{top:6px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg)}
+
+/* ---------- drawer ---------- */
+.drawer{
+  position:fixed;inset:0;z-index:180;background:var(--ink);color:var(--paper);
+  padding:clamp(1.6rem,6vw,3rem);
+  display:flex;flex-direction:column;justify-content:space-between;
+  clip-path:circle(0% at 92% 4%);visibility:hidden;
+  transition:clip-path .62s cubic-bezier(.7,0,.3,1),visibility .62s;
+}
+.drawer.open{clip-path:circle(150% at 92% 4%);visibility:visible}
+.drawer nav{display:flex;flex-direction:column;gap:.1rem;margin-top:clamp(2.4rem,10vw,4.5rem)}
+.drawer nav a{
+  font-family:var(--disp);font-size:clamp(1.5rem,7vw,2.4rem);
+  display:flex;align-items:baseline;gap:.85rem;padding-block:.5rem;
+  border-bottom:1px solid var(--line-ink);
+  opacity:0;transform:translateY(14px);
+  transition:opacity .45s var(--ease),transform .45s var(--ease),color .2s var(--ease);
+}
+.drawer.open nav a{opacity:1;transform:none}
+.drawer nav a:hover{color:var(--terra-soft)}
+.drawer nav a em{
+  font-family:var(--sans);font-style:normal;font-size:.56rem;letter-spacing:.24em;
+  color:var(--terra-soft);min-width:1.7rem;font-weight:600;
+}
+.d-foot{border-top:1px solid var(--line-ink);padding-top:1.2rem;display:grid;gap:.5rem}
+.d-foot a{font-size:.76rem;letter-spacing:.08em;color:rgba(246,240,230,.72)}
+.d-foot a:hover{color:var(--terra-soft)}
+
+/* ---------- buttons: sharp, tracked, sweeping fill ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  padding:1rem 1.7rem;border:1px solid var(--ink);
+  font-size:.64rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+  position:relative;overflow:hidden;isolation:isolate;
+  transition:color .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease);
+}
+.btn svg{width:14px;height:14px;flex:none}
+.btn::before{
+  content:"";position:absolute;inset:0;z-index:-1;background:var(--ink);
+  transform:scaleY(0);transform-origin:bottom;transition:transform .34s var(--ease);
+}
+.btn:hover{color:var(--paper);border-color:var(--ink)}
+.btn:hover::before{transform:scaleY(1)}
+.btn-solid{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn-solid::before{background:var(--terra)}
+.btn-solid:hover{border-color:var(--terra)}
+.btn-terra{background:var(--terra);border-color:var(--terra);color:#fff}
+.btn-terra::before{background:var(--ink)}
+.btn-terra:hover{border-color:var(--ink)}
+.btn-onink{border-color:rgba(246,240,230,.4);color:var(--paper)}
+.btn-onink::before{background:var(--paper)}
+.btn-onink:hover{color:var(--ink);border-color:var(--paper)}
+.btn .arr{transition:transform .3s var(--ease);font-size:.9rem;line-height:1}
+.btn:hover .arr{transform:translateX(4px)}
+
+/* ---------- 1. HERO: full-bleed asymmetric split ---------- */
+.hero{display:grid;grid-template-columns:1.02fr .98fr;min-height:min(84vh,760px);position:relative}
+.hero-copy{
+  padding:clamp(2.4rem,5vw,5rem) var(--pad);
+  padding-left:max(var(--pad),calc((100vw - var(--wrap))/2 + var(--pad)));
+  display:flex;flex-direction:column;justify-content:center;
+}
+.hero-copy h1{margin-top:clamp(.9rem,1.8vw,1.5rem);max-width:14ch}
+.hero-copy h1 em{display:block;color:var(--terra);font-style:italic}
+.hero-sub{margin-top:clamp(1.1rem,2vw,1.6rem);max-width:44ch}
+.hero-sub strong{font-weight:600;color:var(--ink)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:clamp(1.5rem,2.6vw,2.1rem)}
+.hero-meta{
+  display:flex;flex-wrap:wrap;gap:0 1.5rem;margin-top:clamp(1.8rem,3.2vw,2.6rem);
+  padding-top:1.1rem;border-top:1px solid var(--line);
+  font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);
+}
+.hero-meta span{display:inline-flex;align-items:center;gap:.55rem}
+.hero-meta .loz{width:5px;height:5px;border-color:var(--terra)}
+
+.hero-media{position:relative;overflow:hidden;background:var(--paper-2);min-height:340px}
+.hero-media img{
+  width:100%;height:100%;object-fit:cover;object-position:var(--focal,center 22%);
+  animation:heroIn 1.4s var(--ease) both;
+}
+@keyframes heroIn{from{transform:scale(1.06);opacity:.35}to{transform:scale(1);opacity:1}}
+.hero-stamp{
+  position:absolute;left:0;bottom:clamp(1.4rem,3vw,2.4rem);
+  background:var(--ink);color:var(--paper);
+  padding:1rem 1.6rem 1rem 1.3rem;
+  display:flex;align-items:center;gap:.9rem;
+}
+.hero-stamp .hs-n{font-family:var(--disp);font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1}
+.hero-stamp .hs-t{font-size:.53rem;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(246,240,230,.64);line-height:1.8}
+.hero-stamp .hs-t b{display:block;color:var(--terra-soft);font-weight:600}
+
+/* ---------- 2. CONTENTS INDEX ---------- */
+.index{padding-block:clamp(2.2rem,4.6vw,4rem);border-bottom:1px solid var(--line)}
+.index-head{display:flex;justify-content:space-between;align-items:baseline;gap:2rem;
+  padding-bottom:1.3rem}
+.index-head h2{font-size:.9rem;letter-spacing:.46em;text-transform:uppercase;font-family:var(--sans);
+  font-weight:600;color:var(--muted)}
+.index-head span{font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.index-list{border-top:1px solid var(--ink)}
+.index-row{
+  display:grid;grid-template-columns:3.2rem 1fr auto;align-items:baseline;
+  gap:clamp(.8rem,2vw,2rem);padding-block:clamp(.72rem,1.4vw,1.05rem);
+  border-bottom:1px solid var(--line);position:relative;
+  transition:padding-left .34s var(--ease);
+}
+.index-row::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--terra);
+  transform:scaleY(0);transition:transform .34s var(--ease);
+}
+.index-row:hover{padding-left:1rem}
+.index-row:hover::before{transform:scaleY(1)}
+.ir-n{font-size:.58rem;letter-spacing:.2em;color:var(--terra);font-weight:600;padding-top:.15rem}
+.ir-t{font-family:var(--disp);font-size:clamp(1.1rem,2.3vw,1.75rem);line-height:1.12;
+  transition:color .3s var(--ease)}
+.ir-d{font-size:.7rem;color:var(--muted);letter-spacing:.02em;text-align:right;
+  max-width:36ch;line-height:1.5}
+.index-row:hover .ir-t{color:var(--terra)}
+
+/* ---------- 3. PULL QUOTE ---------- */
+.pull{padding-block:clamp(3rem,6.5vw,5.5rem);position:relative}
+.pull-inner{display:grid;grid-template-columns:auto 1fr;gap:clamp(1.2rem,2.6vw,2.6rem);align-items:start}
+.pull-mark{font-family:var(--disp);font-size:clamp(3.4rem,9vw,7.5rem);line-height:.55;
+  color:var(--terra);opacity:.2;user-select:none}
+.pull blockquote{
+  margin:0;font-family:var(--disp);font-style:italic;
+  font-size:clamp(1.35rem,3.1vw,2.5rem);line-height:1.3;letter-spacing:-.018em;
+  max-width:26ch;
+}
+.pull figcaption{
+  margin-top:clamp(1.2rem,2.4vw,1.9rem);padding-top:1rem;border-top:1px solid var(--line);
+  display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;
+  font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);
+}
+.pull figcaption b{color:var(--ink);font-weight:600;letter-spacing:.16em}
+
+/* ---------- 4. COLLECTIONS: horizontal rail ---------- */
+.collections{padding-block:var(--sec) 0;scroll-margin-top:72px}
+.col-head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:2rem;
+  padding-bottom:clamp(1.5rem,2.8vw,2.4rem)}
+.col-head .body-l{margin-top:.9rem}
+.rail-nav{display:flex;gap:.45rem;flex:none}
+.rail-btn{width:42px;height:42px;border:1px solid var(--line);display:grid;place-items:center;
+  transition:background .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease)}
+.rail-btn svg{width:15px;height:15px}
+.rail-btn:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rail-btn[disabled]{opacity:.28;pointer-events:none}
+.rail{
+  display:flex;gap:clamp(14px,2vw,28px);overflow-x:auto;scroll-snap-type:x mandatory;
+  padding-inline:max(var(--pad),calc((100vw - var(--wrap))/2 + var(--pad)));
+  padding-bottom:clamp(1.4rem,2.6vw,2.1rem);
+  scrollbar-width:thin;scrollbar-color:var(--line) transparent;
+  -webkit-overflow-scrolling:touch;
+}
+.rail::-webkit-scrollbar{height:3px}
+.rail::-webkit-scrollbar-thumb{background:var(--line)}
+.rail::-webkit-scrollbar-track{background:transparent}
+.rail-card{
+  flex:0 0 clamp(244px,30vw,400px);scroll-snap-align:start;
+  display:flex;flex-direction:column;
+}
+.rail-media{position:relative;overflow:hidden;background:var(--paper-2);aspect-ratio:4/5}
+.rail-media img{width:100%;height:100%;object-fit:cover;object-position:var(--focal,center 50%);
+  transition:transform .9s var(--ease)}
+.rail-card:hover .rail-media img{transform:scale(1.045)}
+.rail-no{
+  position:absolute;top:0;right:0;background:var(--paper);color:var(--ink);
+  font-size:.56rem;font-weight:600;letter-spacing:.18em;padding:.42rem .7rem;
+}
+.rail-body{padding-top:1rem;display:flex;flex-direction:column;gap:.45rem;flex:1}
+.rail-body h3{
+  font-size:clamp(1.15rem,1.85vw,1.5rem);
+  display:flex;align-items:baseline;gap:.6rem;justify-content:space-between;
+}
+.rail-body h3 .arw{font-family:var(--sans);font-size:.85rem;color:var(--terra);
+  transition:transform .3s var(--ease);flex:none}
+.rail-card:hover h3 .arw{transform:translateX(4px)}
+.rail-body p{font-size:.84rem;color:var(--muted);line-height:1.65;max-width:34ch}
+.rail-cat{font-size:.54rem;letter-spacing:.26em;text-transform:uppercase;color:var(--terra);
+  font-weight:600;padding-top:.5rem;margin-top:auto}
+.rail-media-cta{
+  background:var(--ink);color:var(--paper);
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:clamp(1.1rem,2.2vw,1.7rem);position:relative;
+}
+.rail-media-cta::after{
+  content:"";position:absolute;inset:clamp(9px,1.6vw,13px);
+  border:1px solid rgba(232,169,140,.3);pointer-events:none;
+}
+.cta-k{font-size:.54rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--terra-soft);position:relative;z-index:1}
+.cta-t{font-family:var(--disp);font-size:clamp(1.25rem,2.1vw,1.75rem);line-height:1.14;
+  letter-spacing:-.014em;max-width:12ch;position:relative;z-index:1}
+.cta-b{display:inline-flex;align-items:center;gap:.45rem;font-size:.56rem;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--paper);
+  border-bottom:1px solid var(--terra-soft);padding-bottom:.3rem;
+  align-self:flex-start;position:relative;z-index:1;transition:color .25s var(--ease)}
+.rail-cta:hover .cta-b{color:var(--terra-soft)}
+
+/* ---------- 5. HERITAGE: asymmetric editorial, overlapping ---------- */
+.heritage{background:var(--paper);padding-block:var(--sec);scroll-margin-top:72px}
+.her-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,4vw,4.4rem);align-items:center}
+.her-stack{position:relative;padding-bottom:clamp(2.2rem,5vw,4rem)}
+.her-main{
+  position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--paper-2);
+  max-width:88%;
+}
+.her-main img{width:100%;height:100%;object-fit:cover;object-position:var(--focal,center 50%)}
+/* the intentional placeholder panel */
+.ph{
+  width:100%;height:100%;
+  background:
+    radial-gradient(120% 90% at 18% 6%,rgba(178,74,43,.10),transparent 62%),
+    linear-gradient(160deg,var(--paper-2) 0%,#E2D8C6 100%);
+  border:1px solid var(--line);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:clamp(1.4rem,3.4vw,2.8rem);position:relative;
+}
+.ph::before{
+  content:"";position:absolute;inset:clamp(9px,1.6vw,14px);
+  border:1px solid rgba(178,74,43,.34);pointer-events:none;
+}
+.ph::after{
+  content:"";position:absolute;inset:clamp(9px,1.6vw,14px);
+  background-image:
+    repeating-linear-gradient(45deg,rgba(25,22,20,.05) 0 1px,transparent 1px 8px),
+    repeating-linear-gradient(-45deg,rgba(25,22,20,.05) 0 1px,transparent 1px 8px);
+  pointer-events:none;
+}
+.ph-orn{width:clamp(20px,3vw,26px);height:clamp(20px,3vw,26px);color:var(--terra);
+  transform:rotate(45deg);border:1px solid currentColor;display:grid;place-items:center;
+  margin-bottom:clamp(1rem,2.2vw,1.5rem);position:relative;z-index:1}
+.ph-orn::after{content:"";width:5px;height:5px;background:currentColor;display:block}
+.ph-line{
+  font-family:var(--disp);font-size:clamp(1.02rem,1.75vw,1.5rem);line-height:1.28;
+  max-width:17ch;letter-spacing:-.01em;position:relative;z-index:1;
+}
+.ph-note{
+  margin-top:clamp(.85rem,1.8vw,1.2rem);font-size:.55rem;font-weight:600;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--muted);
+  max-width:24ch;line-height:1.9;position:relative;z-index:1;
+}
+.her-inset{
+  position:absolute;right:0;bottom:0;width:clamp(150px,40%,250px);
+  aspect-ratio:5/4;overflow:hidden;background:var(--paper-2);
+  border:6px solid var(--paper);box-shadow:0 18px 40px -26px rgba(25,22,20,.5);
+}
+.her-inset img{width:100%;height:100%;object-fit:cover;object-position:var(--focal,center 50%)}
+.her-year{
+  position:absolute;left:0;top:0;background:var(--terra);color:#fff;
+  font-family:var(--disp);font-size:clamp(.85rem,1.4vw,1.1rem);letter-spacing:.08em;
+  padding:.45rem .8rem;z-index:2;
+}
+
+.her-copy h2{margin-top:1.1rem;max-width:20ch}
+.her-copy .body-l{margin-top:clamp(1rem,2vw,1.5rem)}
+.timeline{margin-top:clamp(1.6rem,3vw,2.4rem);border-top:1px solid var(--ink)}
+.tl-item{
+  display:grid;grid-template-columns:minmax(84px,7.5rem) 1fr;gap:clamp(.7rem,2vw,1.6rem);
+  padding-block:clamp(.85rem,1.7vw,1.2rem);border-bottom:1px solid var(--line);
+}
+.tl-year{font-size:.56rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--terra);padding-top:.32rem;line-height:1.6}
+.tl-item h4{font-size:clamp(.98rem,1.5vw,1.16rem);margin-bottom:.35rem;letter-spacing:-.008em}
+.tl-item p{font-size:.82rem;color:var(--muted);line-height:1.68;max-width:44ch}
+.her-sign{
+  margin-top:clamp(1.4rem,2.6vw,2rem);display:flex;align-items:center;gap:.9rem;
+  font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+}
+.her-sign .loz{width:6px;height:6px;border-color:var(--terra)}
+.her-sign b{color:var(--ink);font-weight:600}
+
+/* ---------- 6. WHY US: full-bleed ink band ---------- */
+.why{
+  background:var(--ink);color:var(--paper);position:relative;overflow:hidden;
+  padding-block:var(--sec);scroll-margin-top:72px;
+}
+.why-bg{
+  position:absolute;inset:0;background-size:cover;background-position:center;
+  opacity:.13;pointer-events:none;
+}
+.why::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(90% 70% at 12% 0%,rgba(178,74,43,.18),transparent 60%);
+}
+.why .wrap{position:relative;z-index:1}
+.why-head{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(1.4rem,4vw,4rem);
+  align-items:end;padding-bottom:clamp(1.8rem,3.4vw,3rem)}
+.why-head h2{margin-top:1.1rem;color:var(--paper)}
+.why-head .body-l{color:rgba(246,240,230,.62);max-width:42ch}
+.why-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border-top:1px solid var(--line-ink);
+}
+.why-item{
+  padding:clamp(1.3rem,2.6vw,2.2rem) clamp(1rem,2vw,1.9rem) clamp(1.3rem,2.6vw,2.2rem) 0;
+  border-bottom:1px solid var(--line-ink);
+  position:relative;
+}
+.why-item:not(:nth-child(3n)){border-right:1px solid var(--line-ink);
+  padding-right:clamp(1.2rem,2.4vw,2.1rem)}
+.why-item:not(:first-child){padding-left:clamp(1rem,2vw,1.9rem)}
+.w-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.w-n{font-size:.54rem;letter-spacing:.24em;color:rgba(246,240,230,.4);font-weight:600}
+.w-ico{width:26px;height:26px;color:var(--terra-soft);flex:none}
+.why-item h3{
+  font-family:var(--disp);font-size:clamp(1.02rem,1.5vw,1.2rem);line-height:1.2;
+  margin-bottom:.55rem;color:var(--paper);
+}
+.why-item p{font-size:.82rem;color:rgba(246,240,230,.6);line-height:1.72;max-width:34ch}
+
+/* ---------- 7. NOTEBOOK: numbered editorial list ---------- */
+.notebook{padding-block:var(--sec);scroll-margin-top:72px}
+.nb-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.2rem,4vw,4rem);
+  align-items:end;padding-bottom:clamp(1.6rem,3vw,2.6rem)}
+.nb-head h2{margin-top:1.1rem;max-width:18ch}
+.nb-head .body-l{max-width:40ch;justify-self:end}
+.nb-list{border-top:1px solid var(--ink)}
+.nb-row{
+  display:grid;grid-template-columns:clamp(2.6rem,5vw,4.4rem) 1fr;
+  gap:clamp(.9rem,2.4vw,2.4rem);
+  padding-block:clamp(1.15rem,2.4vw,1.8rem);
+  border-bottom:1px solid var(--line);
+  transition:background .3s var(--ease);
+}
+.nb-row:hover{background:rgba(178,74,43,.035)}
+.nb-n{
+  font-family:var(--disp);font-size:clamp(1.5rem,3.4vw,2.6rem);line-height:1;
+  color:var(--terra);opacity:.55;letter-spacing:-.03em;padding-top:.1rem;
+}
+.nb-body{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1fr);
+  gap:clamp(.7rem,2.4vw,2.6rem);align-items:baseline}
+.nb-body h3{font-size:clamp(1.05rem,1.9vw,1.45rem);line-height:1.16;letter-spacing:-.014em}
+.nb-body p{font-size:.86rem;color:var(--muted);line-height:1.74;max-width:52ch}
+
+/* ---------- 8. BESTSELLERS: overlapping stagger ---------- */
+.best{padding-block:var(--sec);background:var(--paper-2);scroll-margin-top:72px}
+.best-head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:2rem;
+  padding-bottom:clamp(1.8rem,3.4vw,2.8rem)}
+.best-head h2{margin-top:1.1rem;max-width:20ch}
+.best-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2.6vw,2.6rem);
+  align-items:start;
+}
+.best-item{
+  display:flex;flex-direction:column;position:relative;
+  transition:transform .5s var(--ease);
+}
+.best-item:nth-child(2){margin-top:clamp(1.4rem,4vw,3.4rem)}
+.best-item:nth-child(3){margin-top:clamp(.7rem,2vw,1.7rem)}
+.best-item:hover{transform:translateY(-6px)}
+.best-media{position:relative;overflow:hidden;aspect-ratio:4/5;background:#DED4C2}
+.best-media img{width:100%;height:100%;object-fit:cover;object-position:var(--focal,center 45%);
+  transition:transform .9s var(--ease)}
+.best-item:hover .best-media img{transform:scale(1.04)}
+.best-flag{
+  position:absolute;top:0;left:0;background:var(--paper);color:var(--ink);
+  font-size:.52rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+  padding:.42rem .75rem;
+}
+.best-body{padding-top:1rem;display:flex;align-items:flex-start;justify-content:space-between;
+  gap:1rem;border-top:1px solid rgba(25,22,20,.12);margin-top:.9rem}
+.best-body h3{font-size:clamp(1rem,1.6vw,1.24rem);line-height:1.2;letter-spacing:-.012em}
+.b-meta{font-size:.7rem;color:var(--muted);line-height:1.65;margin-top:.3rem;
+  letter-spacing:.02em}
+.best-price{
+  font-size:.54rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--terra);white-space:nowrap;padding-top:.25rem;
+}
+.best-note{
+  margin-top:clamp(1.8rem,3.4vw,2.8rem);padding-top:1.2rem;border-top:1px solid rgba(25,22,20,.14);
+  display:flex;align-items:flex-start;gap:.7rem;flex-wrap:wrap;
+  font-size:.78rem;color:var(--muted);line-height:1.7;
+}
+.best-note svg{width:15px;height:15px;flex:none;color:var(--terra);margin-top:.2rem}
+.best-note a{color:var(--ink);border-bottom:1px solid var(--terra);font-weight:500;
+  transition:color .2s var(--ease)}
+.best-note a:hover{color:var(--terra)}
+
+/* ---------- 9. REVIEWS: editorial quote stack ---------- */
+.reviews{padding-block:var(--sec);scroll-margin-top:72px}
+.rev-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.2rem,4vw,4rem);
+  align-items:end;padding-bottom:clamp(1.8rem,3.4vw,2.8rem)}
+.rev-head h2{margin-top:1.1rem;max-width:16ch}
+.rev-list{border-top:1px solid var(--ink)}
+.rev-card{
+  display:grid;grid-template-columns:clamp(3.4rem,7vw,6.4rem) 1fr auto;
+  gap:clamp(1rem,2.6vw,2.6rem);align-items:start;
+  padding-block:clamp(1.4rem,2.8vw,2.1rem);border-bottom:1px solid var(--line);
+}
+.rev-stars{display:flex;gap:2px;color:var(--terra);padding-top:.3rem}
+.rev-stars svg{width:11px;height:11px}
+.rev-quote{
+  font-family:var(--disp);font-style:italic;font-size:clamp(1.02rem,1.85vw,1.42rem);
+  line-height:1.5;letter-spacing:-.008em;max-width:44ch;
+}
+.rev-who{text-align:right;min-width:0}
+.rn{font-size:.72rem;font-weight:600;letter-spacing:.03em}
+.rl{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  margin-top:.3rem;line-height:1.6}
+.rev-note{
+  margin-top:clamp(1.4rem,2.8vw,2.1rem);display:flex;gap:.6rem;align-items:flex-start;
+  font-size:.72rem;color:var(--muted);line-height:1.7;
+}
+.rev-note svg{width:14px;height:14px;flex:none;margin-top:.15rem;color:var(--terra)}
+
+/* ---------- 10. CONSULT BANNER ---------- */
+.consult{
+  background:var(--terra);color:#fff;padding-block:clamp(3rem,7vw,5.6rem);
+  position:relative;overflow:hidden;
+}
+.consult::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:
+    repeating-linear-gradient(45deg,rgba(255,255,255,.07) 0 1px,transparent 1px 9px),
+    repeating-linear-gradient(-45deg,rgba(255,255,255,.07) 0 1px,transparent 1px 9px);
+}
+.consult .wrap{position:relative;display:grid;grid-template-columns:1fr auto;
+  gap:clamp(1.6rem,4vw,3.4rem);align-items:center}
+.consult h2{font-size:clamp(1.8rem,4.4vw,3.3rem);line-height:1.04;letter-spacing:-.026em;
+  max-width:20ch;color:#fff}
+.consult h2 em{color:#FFE6D8;font-style:italic}
+.consult p{margin-top:.9rem;max-width:46ch;font-size:.94rem;line-height:1.75;
+  color:rgba(255,255,255,.88)}
+.consult .actions{display:flex;flex-wrap:wrap;gap:.6rem}
+.consult .btn{border-color:rgba(255,255,255,.55);color:#fff}
+.consult .btn::before{background:#fff}
+.consult .btn:hover{color:var(--terra-deep);border-color:#fff}
+.consult .btn-solid{background:#fff;color:var(--terra-deep);border-color:#fff}
+.consult .btn-solid::before{background:var(--ink)}
+.consult .btn-solid:hover{color:var(--paper);border-color:var(--ink)}
+
+/* ---------- 11. FAQ: two-column sticky ---------- */
+.faq{padding-block:var(--sec);scroll-margin-top:72px}
+.faq-grid{display:grid;grid-template-columns:minmax(0,.66fr) minmax(0,1fr);
+  gap:clamp(1.6rem,4.4vw,4.4rem);align-items:start}
+.faq-aside{position:sticky;top:96px}
+.faq-aside h2{margin-top:1.1rem;max-width:14ch}
+.faq-aside .body-l{margin-top:1.1rem;max-width:34ch}
+.faq-aside .btn{margin-top:1.6rem}
+.faq-list{border-top:1px solid var(--ink)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item summary{
+  list-style:none;cursor:pointer;display:flex;align-items:flex-start;justify-content:space-between;
+  gap:1.2rem;padding-block:clamp(.95rem,1.9vw,1.3rem);
+  font-family:var(--disp);font-size:clamp(.98rem,1.6vw,1.16rem);line-height:1.35;
+  transition:color .22s var(--ease);
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:hover{color:var(--terra)}
+.faq-sign{
+  flex:none;width:14px;height:14px;position:relative;margin-top:.32rem;
+  transition:transform .3s var(--ease);
+}
+.faq-sign::before,.faq-sign::after{
+  content:"";position:absolute;background:var(--terra);left:50%;top:50%;
+  transform:translate(-50%,-50%);
+}
+.faq-sign::before{width:13px;height:1px}
+.faq-sign::after{width:1px;height:13px;transition:opacity .25s var(--ease)}
+.faq-item[open] .faq-sign{transform:rotate(180deg)}
+.faq-item[open] .faq-sign::after{opacity:0}
+.faq-a{
+  padding-bottom:clamp(1rem,2vw,1.4rem);font-size:.86rem;color:var(--muted);
+  line-height:1.78;max-width:58ch;padding-right:2rem;
+}
+.faq-a a{color:var(--ink);border-bottom:1px solid var(--terra)}
+
+/* ---------- 12. CONTACT ---------- */
+.contact{padding-block:var(--sec) 0;scroll-margin-top:72px}
+.ct-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);
+  gap:clamp(1.6rem,4.4vw,4rem);align-items:start}
+.ct-info h2{margin-top:1.1rem;max-width:16ch}
+.ct-info .body-l{margin-top:1.1rem;max-width:40ch}
+
+.branch{margin-top:clamp(1.6rem,3vw,2.4rem);border-top:1px solid var(--ink);
+  padding-top:clamp(1rem,2vw,1.4rem)}
+.b-h{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.b-h h3{font-size:clamp(1.15rem,2vw,1.5rem);letter-spacing:-.016em}
+.b-tag{font-size:.52rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--terra);white-space:nowrap}
+.b-addr{margin-top:.5rem;font-size:.86rem;color:var(--muted);line-height:1.7}
+.b-links{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.1rem}
+.chip{
+  display:inline-flex;align-items:center;gap:.45rem;
+  border:1px solid var(--line);padding:.55rem .85rem;
+  font-size:.62rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
+  transition:border-color .25s var(--ease),background .25s var(--ease),color .25s var(--ease);
+}
+.chip svg{width:13px;height:13px;flex:none;color:var(--terra);transition:color .25s var(--ease)}
+.chip:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.chip:hover svg{color:var(--terra-soft)}
+
+.hours{margin-top:clamp(1.3rem,2.6vw,1.9rem);background:var(--paper-2);
+  padding:clamp(1rem,2vw,1.4rem) clamp(1rem,2vw,1.5rem)}
+.hr-h{font-size:.54rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--terra);margin-bottom:.7rem}
+.hr-row{display:flex;justify-content:space-between;gap:1rem;padding-block:.42rem;
+  border-bottom:1px solid rgba(25,22,20,.09);font-size:.8rem}
+.hr-row span:first-child{color:var(--muted);letter-spacing:.02em}
+.hr-row span:last-child{font-weight:500;letter-spacing:.02em;white-space:nowrap}
+.hr-foot{margin-top:.7rem;font-size:.68rem;color:var(--muted);line-height:1.65;max-width:34ch}
+
+.form-panel{background:var(--ink);color:var(--paper);padding:clamp(1.3rem,3vw,2.2rem)}
+.form-panel h3{font-size:clamp(1.2rem,2vw,1.55rem);color:var(--paper);letter-spacing:-.014em}
+.f-sub{margin-top:.55rem;font-size:.8rem;color:rgba(246,240,230,.58);line-height:1.7;max-width:40ch}
+.form-panel form{margin-top:clamp(1.1rem,2.2vw,1.6rem);display:grid;gap:.85rem}
+.field{display:grid;gap:.35rem}
+.field label{font-size:.55rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(246,240,230,.55)}
+.field input,.field select,.field textarea{
+  font-family:var(--sans);font-size:.85rem;color:var(--paper);
+  background:rgba(246,240,230,.055);border:1px solid rgba(246,240,230,.18);
+  padding:.72rem .8rem;width:100%;transition:border-color .22s var(--ease),background .22s var(--ease);
+}
+.field textarea{min-height:82px;resize:vertical;line-height:1.6}
+.field input::placeholder,.field textarea::placeholder{color:rgba(246,240,230,.32)}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--terra-soft);background:rgba(246,240,230,.09);
+}
+.field select{appearance:none;cursor:pointer;
+  background-image:linear-gradient(45deg,transparent 50%,rgba(246,240,230,.5) 50%),
+                   linear-gradient(135deg,rgba(246,240,230,.5) 50%,transparent 50%);
+  background-position:calc(100% - 16px) 52%,calc(100% - 11px) 52%;
+  background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+.field select option{background:var(--ink);color:var(--paper)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+.form-panel .btn{width:100%;margin-top:.3rem;border-color:var(--terra);background:var(--terra);
+  color:#fff}
+.form-panel .btn::before{background:var(--paper)}
+.form-panel .btn:hover{color:var(--ink);border-color:var(--paper)}
+.form-status{font-size:.76rem;color:var(--terra-soft);display:none;line-height:1.6}
+.form-status.show{display:block}
+.form-note{
+  display:flex;gap:.5rem;align-items:flex-start;font-size:.66rem;
+  color:rgba(246,240,230,.42);line-height:1.65;margin-top:.2rem;
+}
+.form-note svg{width:13px;height:13px;flex:none;margin-top:.12rem}
+
+/* ---------- 13. FOOTER ---------- */
+.footer{background:var(--ink);color:var(--paper);padding-top:clamp(2.4rem,5vw,4rem)}
+.ft-top{display:grid;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,.7fr));
+  gap:clamp(1.4rem,3.4vw,3rem);padding-bottom:clamp(2rem,4vw,3rem)}
+.ft-brand .fn{
+  font-family:var(--disp);font-size:clamp(1.1rem,2vw,1.6rem);letter-spacing:.06em;
+  text-transform:uppercase;line-height:1.1;
+}
+.ft-brand .fs{
+  margin-top:.45rem;font-size:.54rem;font-weight:600;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--terra-soft);
+}
+.ft-brand p{margin-top:1rem;font-size:.8rem;color:rgba(246,240,230,.52);
+  line-height:1.75;max-width:36ch}
+.socials{display:flex;gap:.5rem;margin-top:1.2rem}
+.socials a{
+  width:34px;height:34px;border:1px solid var(--line-ink);display:grid;place-items:center;
+  transition:background .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease);
+}
+.socials svg{width:14px;height:14px}
+.socials a:hover{background:var(--terra);border-color:var(--terra);color:#fff}
+.ft-col h4{
+  font-family:var(--sans);font-size:.54rem;font-weight:600;letter-spacing:.26em;
+  text-transform:uppercase;color:rgba(246,240,230,.42);margin-bottom:.95rem;
+}
+.ft-col li{margin-bottom:.55rem}
+.ft-col a{font-size:.8rem;color:rgba(246,240,230,.74);transition:color .2s var(--ease);
+  line-height:1.5;display:inline-block}
+.ft-col a:hover{color:var(--terra-soft)}
+.ft-bot{
+  border-top:1px solid var(--line-ink);padding-block:1.2rem;
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;
+  font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(246,240,230,.4);
+}
+
+/* ---------- floating WhatsApp + mobile bar ---------- */
+.wa-float{
+  position:fixed;right:clamp(14px,2.4vw,26px);bottom:clamp(14px,2.4vw,26px);z-index:110;
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--ink);color:var(--paper);padding:.7rem 1.05rem;
+  font-size:.58rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  box-shadow:0 16px 40px -18px rgba(25,22,20,.6);
+  transition:background .25s var(--ease),transform .25s var(--ease);
+}
+.wa-float svg{width:15px;height:15px;flex:none}
+.wa-float:hover{background:var(--terra);transform:translateY(-2px)}
+
+.mbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:115;
+  background:var(--ink);border-top:1px solid rgba(246,240,230,.12)}
+.mbar a{
+  flex:1;display:flex;align-items:center;justify-content:center;gap:.45rem;
+  padding-block:.9rem;font-size:.6rem;font-weight:600;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--paper);
+}
+.mbar a+a{border-left:1px solid rgba(246,240,230,.12)}
+.mbar a svg{width:14px;height:14px;flex:none}
+.mbar a.wa{color:var(--terra-soft)}
+
+/* ---------- reveal ---------- */
+.js .rv{opacity:0;transform:translateY(22px);
+  transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv.d1{transition-delay:.08s}
+.js .rv.d2{transition-delay:.16s}
+.js .rv.d3{transition-delay:.24s}
+
+/* ==========================================================================
+   RESPONSIVE — breakpoints bracket 1440 / 1024 / 768 / 390
+   ========================================================================== */
+
+@media (max-width:1180px){
+  .nb-body{grid-template-columns:1fr;gap:.45rem}
+  .why-head,.nb-head,.rev-head{grid-template-columns:1fr;gap:1.1rem;align-items:start}
+  .nb-head .body-l,.why-head .body-l{justify-self:start;max-width:52ch}
+}
+
+@media (max-width:1024px){
+  .hero{grid-template-columns:1fr;min-height:0}
+  .hero-copy{padding-inline:var(--pad);order:2;
+    padding-block:clamp(1.8rem,4vw,2.8rem) clamp(2.2rem,4.5vw,3rem)}
+  .hero-media{order:1;aspect-ratio:16/11;min-height:0}
+  .hero-copy h1{max-width:20ch}
+  .hero-sub{max-width:56ch}
+  .consult .wrap{grid-template-columns:1fr;gap:1.5rem}
+  .consult h2{max-width:24ch}
+}
+
+@media (max-width:980px){
+  .nav-l,.nav-r{display:none}
+  .burger{display:flex}
+  .her-grid,.ct-grid,.faq-grid{grid-template-columns:1fr;gap:clamp(1.6rem,4vw,2.6rem)}
+  .her-main{max-width:100%}
+  .her-stack{padding-bottom:clamp(2.6rem,9vw,5rem);margin-bottom:.5rem}
+  .her-inset{width:clamp(140px,34%,220px)}
+  .faq-aside{position:static}
+  .faq-aside h2{max-width:20ch}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .why-item{border-right:0!important;padding-left:0!important;padding-right:0!important}
+  .why-item:nth-child(odd){padding-right:clamp(1rem,2vw,1.6rem);
+    border-right:1px solid var(--line-ink)!important}
+  .why-item:nth-child(even){padding-left:clamp(1rem,2vw,1.6rem)!important}
+  .best-grid{grid-template-columns:1fr 1fr}
+  .best-item:nth-child(2),.best-item:nth-child(3){margin-top:0}
+  .best-item:nth-child(3){grid-column:span 2;max-width:52%}
+  .ft-top{grid-template-columns:1fr 1fr;gap:1.6rem}
+  .rev-card{grid-template-columns:1fr;gap:.7rem}
+  .rev-who{text-align:left}
+  .rev-quote{max-width:100%}
+}
+
+@media (max-width:760px){
+  .ticker{font-size:.56rem;padding-block:.42rem}
+  .ticker .wrap{justify-content:center;gap:.4rem;text-align:center}
+  .ticker .wrap>a{display:none}
+  .why-grid{grid-template-columns:1fr}
+  .why-item{padding-left:0!important;padding-right:0!important;
+    border-right:0!important;border-bottom:1px solid var(--line-ink)!important}
+  .best-grid{grid-template-columns:1fr;gap:1.6rem}
+  .best-item:nth-child(3){grid-column:auto;max-width:100%}
+  .nb-row{grid-template-columns:clamp(2rem,7vw,2.8rem) 1fr;gap:.9rem}
+  .index-row{grid-template-columns:2.2rem 1fr;row-gap:.25rem}
+  .ir-d{grid-column:2;text-align:left;max-width:100%;font-size:.66rem}
+  .index-head span{display:none}
+  .col-head,.best-head{gap:1rem}
+  .rail-nav{display:none}
+  .rail-card{flex-basis:min(78vw,340px)}
+  .footer{padding-bottom:3.1rem}
+  .mbar{display:flex}
+  .wa-float{display:none}
+  .ft-bot{flex-direction:column;align-items:flex-start;gap:.4rem}
+  .pull-inner{grid-template-columns:1fr;gap:.3rem}
+  .pull-mark{font-size:3.4rem;opacity:.16}
+  .tl-item{grid-template-columns:1fr;gap:.3rem}
+  .field-row{grid-template-columns:1fr}
+  .hero-actions .btn{flex:1 1 auto;justify-content:center}
+}
+
+@media (max-width:520px){
+  .brand .bname{font-size:.92rem;letter-spacing:.07em}
+  .brand .bsub{font-size:.44rem;letter-spacing:.3em;margin-top:.32rem}
+  .head-inner{padding-block:.85rem}
+  .hero-stamp{padding:.8rem 1.1rem}
+  .hero-stamp .hs-t{display:none}
+  .hero-meta{gap:0 .9rem;font-size:.53rem;letter-spacing:.16em}
+  .hero-copy h1{max-width:100%}
+  .pull blockquote{max-width:100%}
+  .ft-top{grid-template-columns:1fr}
+  .hours{padding:1rem}
+  .rev-card{padding-block:1.2rem}
+}
+
+@media (max-width:390px){
+  :root{--pad:16px}
+  .brand .bname{font-size:.85rem;letter-spacing:.05em}
+  .brand .bsub{font-size:.4rem;letter-spacing:.24em}
+  .hdr-cta{display:none}
+  .hero-meta{gap:0 .7rem}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .hero-actions .btn{width:100%}
+  .form-panel{padding:1.1rem}
+  .consult h2{font-size:1.6rem}
+  .mbar a{font-size:.54rem;letter-spacing:.14em}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .js .rv{opacity:1;transform:none}
+  .hero-media img{animation:none}
+}
+
+@media print{
+  .site-head,.ticker,.wa-float,.mbar,.drawer,.consult{display:none}
+  body{background:#fff;color:#000}
+  .why,.footer,.form-panel{background:#fff;color:#000}
+  .why-item p,.ft-brand p{color:#333}
+  .why-item h3,.why-head h2,.ft-brand .fn{color:#000}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ================= TICKER ================= -->
+<div class="ticker">
+  <div class="wrap">
+    <div class="tick-l">
+      <span><i class="loz"></i>Mon–Sat 10:00 am – 8:30 pm</span>
+      <span><i class="loz"></i>Sun 11:00 am – 1:30 pm</span>
+      <span><i class="loz"></i>Kumbakonam</span>
+    </div>
+    <a href="tel:+919790115883">+91 97901 15883</a>
+  </div>
+</div>
+
+<!-- ================= HEADER ================= -->
+<header class="site-head" id="header">
+  <div class="head-inner wrap">
+    <nav class="nav-l" aria-label="Sections">
+      <a href="#collections">Collections</a>
+      <a href="#heritage">Heritage</a>
+      <a href="#notebook">Notebook</a>
+    </nav>
+
+    <a class="brand" href="#top" aria-label="Kumba Handloom House — home">
+      <span class="bname">Kumba Handloom House</span>
+      <span class="bsub">Silk &amp; Bridal Sarees</span>
+    </a>
+
+    <div class="nav-r">
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Visit</a>
+      <a class="hdr-cta" href="https://wa.me/919790115883?text=Hello%20Kumba%20Handloom%20House%2C%20I%27d%20like%20to%20enquire%20about%20your%20sarees." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.6.1a6.7 6.7 0 01-2-1.2 7.4 7.4 0 01-1.4-1.7c-.1-.3 0-.4.1-.6l.4-.5.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.8 11.6 11.6 0 004.4 3.9 5.2 5.2 0 002.4.5 2.7 2.7 0 001.8-1.2 2.2 2.2 0 00.2-1.2c-.1-.1-.3-.2-.6-.3z"/></svg>
+        Enquire
+      </a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- mobile drawer -->
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu">
+  <nav aria-label="Mobile">
+    <a href="#collections"><em>01</em>Collections</a>
+    <a href="#heritage"><em>02</em>Heritage</a>
+    <a href="#notebook"><em>03</em>Silk Notebook</a>
+    <a href="#bestsellers"><em>04</em>Bestsellers</a>
+    <a href="#reviews"><em>05</em>Reviews</a>
+    <a href="#faq"><em>06</em>Questions</a>
+    <a href="#contact"><em>07</em>Visit Us</a>
+  </nav>
+  <div class="d-foot">
+    <a href="tel:+919790115883">Kumbakonam · +91 97901 15883</a>
+    <a href="https://wa.me/919790115883" target="_blank" rel="noopener">WhatsApp us</a>
+  </div>
+</div>
+
+<main id="main">
+  <span id="top"></span>
+
+  <!-- ================= 1. HERO ================= -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="lbl">Silk · Since the 1980s</p>
+      <h1 class="h-xl" id="hero-title">The silk your family will pass down<em>to the next.</em></h1>
+      <p class="hero-sub body-l">
+        Bridal silks, soft silk and cotton handloom sarees —
+        chosen thread by thread at <strong>Kumba Handloom House</strong>, the silk saree
+        showroom in Kumbakonam that four decades of weddings have grown up with.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href="https://wa.me/919790115883?text=Hello%20Kumba%20Handloom%20House%2C%20I%20would%20like%20to%20enquire%20about%20a%20saree." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.6.1a6.7 6.7 0 01-2-1.2 7.4 7.4 0 01-1.4-1.7c-.1-.3 0-.4.1-.6l.4-.5.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.8 11.6 11.6 0 004.4 3.9 5.2 5.2 0 002.4.5 2.7 2.7 0 001.8-1.2 2.2 2.2 0 00.2-1.2c-.1-.1-.3-.2-.6-.3z"/></svg>
+          Enquire on WhatsApp
+        </a>
+        <a class="btn" href="#collections">Explore Collections <span class="arr">→</span></a>
+      </div>
+      <div class="hero-meta">
+        <span><i class="loz"></i>Four decades of silk</span>
+        <span><i class="loz"></i>One showroom, Kumbakonam</span>
+        <span><i class="loz"></i>Bridal by appointment</span>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img data-photo="hero" src="images/hero.jpg" alt="Model wearing a gold silk saree against a deep green backdrop" width="1100" height="1400" fetchpriority="high">
+      <div class="hero-stamp">
+        <div class="hs-n">40</div>
+        <div class="hs-t">Years of silk,<b>weddings &amp; trust</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 2. CONTENTS INDEX ================= -->
+  <section class="index" aria-labelledby="index-title">
+    <div class="wrap">
+      <div class="index-head">
+        <h2 id="index-title">In this visit</h2>
+        <span>Seven parts</span>
+      </div>
+      <ol class="index-list">
+        <li><a class="index-row" href="#collections">
+          <span class="ir-n">01</span>
+          <span class="ir-t">The Collections</span>
+          <span class="ir-d">Bridal, soft silk and cotton handloom</span>
+        </a></li>
+        <li><a class="index-row" href="#heritage">
+          <span class="ir-n">02</span>
+          <span class="ir-t">Our Story</span>
+          <span class="ir-d">From one small textile shop to a house of silk</span>
+        </a></li>
+        <li><a class="index-row" href="#why">
+          <span class="ir-n">03</span>
+          <span class="ir-t">Why Kumba Handloom House</span>
+          <span class="ir-d">Four decades of getting the small things right</span>
+        </a></li>
+        <li><a class="index-row" href="#notebook">
+          <span class="ir-n">04</span>
+          <span class="ir-t">The Silk Notebook</span>
+          <span class="ir-d">Four things worth knowing before you buy silk</span>
+        </a></li>
+        <li><a class="index-row" href="#bestsellers">
+          <span class="ir-n">05</span>
+          <span class="ir-t">Most Asked For</span>
+          <span class="ir-d">The three that leave the shelf first</span>
+        </a></li>
+        <li><a class="index-row" href="#reviews">
+          <span class="ir-n">06</span>
+          <span class="ir-t">In Their Words</span>
+          <span class="ir-d">What families tell us after the wedding</span>
+        </a></li>
+        <li><a class="index-row" href="#contact">
+          <span class="ir-n">07</span>
+          <span class="ir-t">Visit Us</span>
+          <span class="ir-d">One showroom — come and feel the silk</span>
+        </a></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ================= 3. PULL QUOTE ================= -->
+  <section class="pull" aria-label="Our promise">
+    <div class="wrap">
+      <figure class="pull-inner rv">
+        <div class="pull-mark" aria-hidden="true">&ldquo;</div>
+        <div>
+          <blockquote>Better quality at a lower price.</blockquote>
+          <figcaption>
+            <b>The promise we opened with</b>
+            <span>Kumba Handloom House, early 1980s</span>
+          </figcaption>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ================= 4. COLLECTIONS RAIL ================= -->
+  <section class="collections" id="collections" aria-labelledby="col-title">
+    <div class="wrap">
+      <div class="col-head">
+        <div>
+          <p class="lbl">The Collections</p>
+          <h2 class="h-lg" id="col-title">Three ways to wear silk.</h2>
+          <p class="body-l">Every collection is chosen for the moment it is meant for — a wedding mandap, a first day at work, a festival morning, or an ordinary Tuesday that deserves better.</p>
+        </div>
+        <div class="rail-nav" aria-hidden="true">
+          <button class="rail-btn" id="railPrev" type="button" aria-label="Previous collections">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="rail-btn" id="railNext" type="button" aria-label="More collections">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="rail" id="rail" tabindex="0" role="region" aria-label="Collections, scrollable">
+      <a class="rail-card" href="https://wa.me/919790115883?text=Hello%20Kumba%20Handloom%20House%2C%20I%27d%20like%20to%20book%20a%20bridal%20saree%20consultation." target="_blank" rel="noopener">
+        <div class="rail-media">
+          <span class="rail-no">01</span>
+          <img data-photo="col-bridal" src="images/col-bridal.jpg" alt="Bridal red and gold silk saree with traditional styling" width="760" height="950" loading="lazy">
+        </div>
+        <div class="rail-body">
+          <h3>Bridal Sarees <span class="arw">→</span></h3>
+          <p>The wedding collection — deep reds, golds and heavy pallus, chosen with you.</p>
+          <span class="rail-cat">Bridal</span>
+        </div>
+      </a>
+
+      <a class="rail-card" href="https://wa.me/919790115883?text=Hello%20Kumba%20Handloom%20House%2C%20I%27d%20like%20to%20see%20your%20soft%20silk%20sarees." target="_blank" rel="noopener">
+        <div class="rail-media">
+          <span class="rail-no">02</span>
+          <img data-photo="col-softsilk" src="images/col-softsilk.jpg" alt="Peacock teal soft silk saree with a fine gold border" width="760" height="950" loading="lazy">
+        </div>
+        <div class="rail-body">
+          <h3>Soft Silk <span class="arw">→</span></h3>
+          <p>Lighter, fluid silk that drapes easily — elegance for long days.</p>
+          <span class="rail-cat">Soft Silk</span>
+        </div>
+      </a>
+
+      <a class="rail-card" href="https://wa.me/919790115883?text=Hello%20Kumba%20Handloom%20House%2C%20I%27d%20like%20to%20see%20your%20cotton%20sarees." target="_blank" rel="noopener">
+        <div class="rail-media">
+          <span class="rail-no">03</span>
+          <img data-photo="col-cotton" src="images/col-cotton.jpg" alt="Woman wearing a handloom cotton saree in soft pastel tones" width="760" height="950" loading="lazy">
+        </div>
+        <div class="rail-body">
+          <h3>Cotton &amp; Handloom <span class="arw">→</span></h3>
+          <p>Breathable weaves with woven borders — the everyday and the summer favourite.</p>
+          <span class="rail-cat">Cotton</span>
+        </div>
+      </a>
+
+      <a class="rail-card rail-cta" href="https://wa.me/919790115883?text=Hello%20Kumba%20Handloom%20House%2C%20could%20you%20send%20me%20your%20current%20range%3F" target="_blank" rel="noopener">
+        <div class="rail-media rail-media-cta">
+          <span class="cta-k">This week</span>
+          <p class="cta-t">See the full range in stock now</p>
+          <span class="cta-b">Ask on WhatsApp <span aria-hidden="true">→</span></span>
+        </div>
+        <div class="rail-body">
+          <h3>Can't visit yet? <span class="arw">→</span></h3>
+          <p>Send us a photo of what you have in mind and we will tell you what is on the shelf this week.</p>
+          <span class="rail-cat">Enquiry</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= 5. HERITAGE ================= -->
+  <section class="sec heritage" id="heritage" aria-labelledby="her-title">
+    <div class="wrap">
+      <div class="her-grid">
+        <div class="her-stack rv">
+          <div class="her-main">
+            <span class="her-year">Est. 1980s</span>
+            <!-- Showroom photo: intentionally blank until the shop supplies a real one.
+                 The panel below holds the exact 4:5 box, so nothing shifts.
+                 Drop a real photo in via the heritage-boutique slot at the top. -->
+            <div class="ph" data-blank-slot="heritage-boutique">
+              <span class="ph-orn" aria-hidden="true"></span>
+              <p class="ph-line">Photo of our Kumbakonam showroom coming soon</p>
+              <p class="ph-note">We would rather show you nothing than someone else's shop</p>
+            </div>
+            <!-- The image element stays wired to the same slot. It is empty and
+                 hidden now; give that slot a file and this becomes visible. -->
+            <img data-photo="heritage-boutique" alt="Interior of the Kumba Handloom House showroom in Kumbakonam" width="1000" height="1250" loading="lazy" hidden>
+          </div>
+          <div class="her-inset">
+            <img data-photo="heritage-loom" src="images/heritage-loom.jpg" alt="A handloom with red silk yarn and jacquard punch cards" width="800" height="640" loading="lazy">
+          </div>
+        </div>
+
+        <div class="her-copy">
+          <p class="lbl">Our Story</p>
+          <h2 class="h-lg" id="her-title">From one small textile shop to a house of silk.</h2>
+          <p class="body-l">
+            Kumba Handloom House began in the early 1980s as a small textile shop. Over the decades
+            it earned its customers' trust the slow way — one family, one wedding, one
+            recommendation at a time — and grew into the showroom it is today.
+          </p>
+
+          <div class="timeline rv d1">
+            <div class="tl-item">
+              <div class="tl-year">The 1980s</div>
+              <div>
+                <h4>A small textile shop</h4>
+                <p>Fabrics sold the old way: measured, folded and handed over the counter, with a reputation built entirely on word of mouth.</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">Growing years</div>
+              <div>
+                <h4>Into silk &amp; cotton sarees</h4>
+                <p>The shop widened into bridal silks, soft silk and cotton handloom sarees — and slowly became the place families came to for the important occasions.</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">Today</div>
+              <div>
+                <h4>One showroom, one standard</h4>
+                <p>Kumbakonam. A complete saree destination — bridal silk to daily cotton — under one roof.</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="her-sign"><i class="loz"></i>Under the same family stewardship · <b>Kumba R Srinivasan, Managing Director</b></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 6. WHY US (ink band) ================= -->
+  <section class="why" id="why" aria-labelledby="why-title">
+    <div class="why-bg" data-photo-bg="texture-band" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="why-head">
+        <div>
+          <p class="lbl on-ink">Why Kumba Handloom House</p>
+          <h2 class="h-lg" id="why-title">Four decades of getting the small things right.</h2>
+        </div>
+        <p class="body-l">A saree is not a quick purchase. It is chosen, draped, compared, and remembered for years. That is the standard we hold ourselves to.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-item rv">
+          <div class="w-top">
+            <span class="w-n">01</span>
+            <svg class="w-ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M16 4l11 7v10l-11 7-11-7V11z"/><path d="M16 11l5 3v5l-5 3-5-3v-5z"/></svg>
+          </div>
+          <h3>Trust that is four decades old</h3>
+          <p>We began in the early 1980s. The families who bought their first saree from us now come back for their daughters' weddings.</p>
+        </div>
+
+        <div class="why-item rv d1">
+          <div class="w-top">
+            <span class="w-n">02</span>
+            <svg class="w-ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M6 12h14l6 5v7h-4"/><circle cx="11" cy="24" r="2.4"/><circle cx="23" cy="24" r="2.4"/><path d="M6 12v12h2.5M6 17h9"/></svg>
+          </div>
+          <h3>Quality at a fair price</h3>
+          <p>Our whole aim has been one thing: better quality at a lower price. Not the cheapest saree — the right one for what you spend.</p>
+        </div>
+
+        <div class="why-item rv d2">
+          <div class="w-top">
+            <span class="w-n">03</span>
+            <svg class="w-ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M4 24c4-3 6-9 6-14M28 24c-4-3-6-9-6-14"/><path d="M10 10h12M12 15h8M13 20h6"/></svg>
+          </div>
+          <h3>Traditional weave, modern taste</h3>
+          <p>Classic silk craft alongside the cuts and colours younger buyers actually want to wear — in the same showroom.</p>
+        </div>
+
+        <div class="why-item rv">
+          <div class="w-top">
+            <span class="w-n">04</span>
+            <svg class="w-ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M16 5l3.2 6.8 7.3 1-5.4 5.2 1.3 7.3L16 21.8 9.6 25.3l1.3-7.3L5.5 12.8l7.3-1z"/></svg>
+          </div>
+          <h3>One showroom, one standard</h3>
+          <p>Kumbakonam is known for range and for service that helps rather than hovers.</p>
+        </div>
+
+        <div class="why-item rv d1">
+          <div class="w-top">
+            <span class="w-n">05</span>
+            <svg class="w-ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M5 20V9a2 2 0 012-2h12l8 8v5a2 2 0 01-2 2H7a2 2 0 01-2-2z"/><path d="M10 25h13a3 3 0 003-3"/><path d="M9 12h6"/></svg>
+          </div>
+          <h3>Guidance, not pressure</h3>
+          <p>Tell us the occasion, the budget and the colour you have in mind. We will show you six and let you decide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 7. NOTEBOOK ================= -->
+  <section class="sec notebook" id="notebook" aria-labelledby="nb-title">
+    <div class="wrap">
+      <div class="nb-head">
+        <div>
+          <p class="lbl">The Silk Notebook</p>
+          <h2 class="h-lg" id="nb-title">Four things worth knowing before you buy silk.</h2>
+        </div>
+        <p class="body-l">Small pieces of advice we give across the counter every week — so you can judge a saree as carefully as we do.</p>
+      </div>
+
+      <div class="nb-list">
+        <div class="nb-row rv">
+          <div class="nb-n">01</div>
+          <div class="nb-body">
+            <h3>How to read real zari</h3>
+            <p>Turn the pallu over. Genuine zari carries the same woven pattern on the reverse, not a printed imitation. Ask us and we will show you the difference side by side.</p>
+          </div>
+        </div>
+        <div class="nb-row rv d1">
+          <div class="nb-n">02</div>
+          <div class="nb-body">
+            <h3>Match the blouse first</h3>
+            <p>Bring the blouse colour you have in mind, or pick it with the saree in hand. A contrast blouse changes the whole drape — it is worth the extra ten minutes.</p>
+          </div>
+        </div>
+        <div class="nb-row rv d2">
+          <div class="nb-n">03</div>
+          <div class="nb-body">
+            <h3>Storing silk well</h3>
+            <p>Wrap silk in a soft cotton cloth rather than plastic, refold along a different line each season, and keep it away from direct sunlight and naphthalene.</p>
+          </div>
+        </div>
+        <div class="nb-row rv d3">
+          <div class="nb-n">04</div>
+          <div class="nb-body">
+            <h3>The first wash</h3>
+            <p>Dry-clean the first time, and dry-clean thereafter. Never wring silk, and never let it soak — the weave and the zari both suffer for it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 8. BESTSELLERS ================= -->
+  <section class="best" id="bestsellers" aria-labelledby="best-title">
+    <div class="wrap">
+      <div class="best-head">
+        <div>
+          <p class="lbl">Most asked for</p>
+          <h2 class="h-lg" id="best-title">The three that leave the shelf first.</h2>
+          <p class="body-l">Ask for these by name when you visit, or send a photo on WhatsApp and we will tell you what is in stock this week.</p>
+        </div>
+      </div>
+
+      <div class="best-grid">
+        <article class="best-item rv">
+          <div class="best-media">
+            <span class="best-flag">Bestseller</span>
+            <img data-photo="best-1" src="images/best-1.jpg" alt="Teal and peacock blue dual-tone silk saree" width="820" height="1025" loading="lazy">
+          </div>
+          <div class="best-body">
+            <div>
+              <h3>Peacock Blue Soft Silk</h3>
+              <p class="b-meta">Dual-tone · Fine gold border<br>Reception &amp; festival wear</p>
+            </div>
+            <span class="best-price">On request</span>
+          </div>
+        </article>
+
+        <article class="best-item rv d1">
+          <div class="best-media">
+            <span class="best-flag">Bestseller</span>
+            <img data-photo="best-2" src="images/best-2.jpg" alt="Teal Banarasi-style silk saree with gold zari work" width="820" height="1025" loading="lazy">
+          </div>
+          <div class="best-body">
+            <div>
+              <h3>Teal Zari Banarasi</h3>
+              <p class="b-meta">Woven zari · Contrast blouse<br>Weddings &amp; receptions</p>
+            </div>
+            <span class="best-price">On request</span>
+          </div>
+        </article>
+
+        <article class="best-item rv d2">
+          <div class="best-media">
+            <span class="best-flag">Bestseller</span>
+            <img data-photo="best-3" src="images/best-3.jpg" alt="Gold tissue silk saree with a green blouse" width="820" height="1025" loading="lazy">
+          </div>
+          <div class="best-body">
+            <div>
+              <h3>Gold Tissue Silk</h3>
+              <p class="b-meta">Tissue silk · Temple border<br>Muhurtham &amp; bridal</p>
+            </div>
+            <span class="best-price">On request</span>
+          </div>
+        </article>
+      </div>
+
+      <p class="best-note rv">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v.01M11 12h1v4h1"/></svg>
+        <span>Prices depend on weave, zari weight and pallu work — we quote honestly in person or on call.
+        <a href="https://wa.me/919790115883?text=Hello%2C%20could%20you%20send%20me%20the%20current%20range%20and%20prices%3F" target="_blank" rel="noopener">Ask for this week's range →</a></span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= 9. REVIEWS ================= -->
+  <section class="sec reviews" id="reviews" aria-labelledby="rev-title">
+    <div class="wrap">
+      <div class="rev-head">
+        <div>
+          <p class="lbl">In their words</p>
+          <h2 class="h-lg" id="rev-title">What families tell us after the wedding.</h2>
+        </div>
+      </div>
+
+      <div class="rev-list">
+        <div class="rev-card rv">
+          <div class="rev-stars" aria-label="5 out of 5">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.6 6.1 20.8l1.2-6.6L2.5 9.5l6.6-.9z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.6 6.1 20.8l1.2-6.6L2.5 9.5l6.6-.9z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.6 6.1 20.8l1.2-6.6L2.5 9.5l6.6-.9z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.6 6.1 20.8l1.2-6.6L2.5 9.5l6.6-.9z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.6 6.1 20.8l1.2-6.6L2.5 9.5l6.6-.9z"/></svg>
+          </div>
+          <p class="rev-quote">“We came for one bridal saree and left with the whole wedding list sorted. Nobody rushed us, and the silk has held its colour beautifully.”</p>
+          <div class="rev-who">
+            <div class="rn">Lakshmi R.</div>
+            <div class="rl">Bridal purchase · Kumbakonam</div>
+          </div>
+        </div>
+
+        <div class="rev-card rv d1">
+          <div class="rev-stars" aria-label="5 out of 5">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.6 6.1 20.8l1.2-6.6L2.5 9.5l6.6-.9z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.6 6.1 20.8l1.2-6.6L2.5 9.5l6.6-.9z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.6 6.1 20.8l1.2-6.6L2.5 9.5l6.6-.9z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.6 6.1 20.8l1.2-6.6L2.5 9.5l6.6-.9z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.6 6.1 20.8l1.2-6.6L2.5 9.5l6.6-.9z"/></svg>
+          </div>
+          <p class="rev-quote">“My mother bought her first silk here in the eighties. Three decades later I bought mine from the same shop. That says everything.”</p>
+          <div class="rev-who">
+            <div class="rn">Priya S.</div>
+            <div class="rl">Second-generation customer · Kumbakonam</div>
+          </div>
+        </div>
+
+        <div class="rev-card rv d2">
+          <div class="rev-stars" aria-label="5 out of 5">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.6 6.1 20.8l1.2-6.6L2.5 9.5l6.6-.9z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.6 6.1 20.8l1.2-6.6L2.5 9.5l6.6-.9z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.6 6.1 20.8l1.2-6.6L2.5 9.5l6.6-.9z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.6 6.1 20.8l1.2-6.6L2.5 9.5l6.6-.9z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.6 6.1 20.8l1.2-6.6L2.5 9.5l6.6-.9z"/></svg>
+          </div>
+          <p class="rev-quote">“We did our whole Diwali shopping in one visit — sarees for me and my mother-in-law, and the colours were exactly what we had in mind. Fair prices too.”</p>
+          <div class="rev-who">
+            <div class="rn">Meena K.</div>
+            <div class="rl">Family shopping · Kumbakonam</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="rev-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v.01M11 12h1v4h1"/></svg>
+        Sample reviews shown while the site is being set up — replace with verified customer reviews before going live.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= 10. CONSULT ================= -->
+  <section class="consult" aria-labelledby="consult-title">
+    <div class="wrap">
+      <div>
+        <h2 class="rv" id="consult-title">Bring the wedding date. We will bring <em>the silk.</em></h2>
+        <p class="rv d1">Bridal consultations are by appointment so the showroom is quiet and unhurried. Tell us the date and the palette you have in mind.</p>
+      </div>
+      <div class="actions rv d2">
+        <a class="btn btn-solid" href="https://wa.me/919790115883?text=Hello%20Kumba%20Handloom%20House%2C%20I%27d%20like%20to%20book%20a%20bridal%20saree%20consultation.%20My%20wedding%20date%20is%3A%20" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.6.1a6.7 6.7 0 01-2-1.2 7.4 7.4 0 01-1.4-1.7c-.1-.3 0-.4.1-.6l.4-.5.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.8 11.6 11.6 0 004.4 3.9 5.2 5.2 0 002.4.5 2.7 2.7 0 001.8-1.2 2.2 2.2 0 00.2-1.2c-.1-.1-.3-.2-.6-.3z"/></svg>
+          Book on WhatsApp
+        </a>
+        <a class="btn" href="tel:+919790115883">Call · +91 97901 15883</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 11. FAQ ================= -->
+  <section class="sec faq" id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="faq-grid">
+        <div class="faq-aside">
+          <p class="lbl">Before you visit</p>
+          <h2 class="h-lg" id="faq-title">Questions we are asked most often.</h2>
+          <p class="body-l">If the answer you need is not here, a message on WhatsApp is the fastest way to reach us.</p>
+          <a class="btn" href="https://wa.me/919790115883?text=Hello%20Kumba%20Handloom%20House%2C%20I%20have%20a%20question." target="_blank" rel="noopener">Ask on WhatsApp <span class="arr">→</span></a>
+        </div>
+
+        <div class="faq-list rv">
+          <details class="faq-item">
+            <summary>Can I see the sarees before I travel to the showroom?<span class="faq-sign" aria-hidden="true"></span></summary>
+            <div class="faq-a">Yes. Send us a photo or a description on WhatsApp and we will tell you what is in stock this week, along with the range and the price band. It saves you a wasted trip.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Do you take bridal appointments?<span class="faq-sign" aria-hidden="true"></span></summary>
+            <div class="faq-a">We do. Tell us the wedding date and roughly when you would like to come, and we will keep the showroom quiet and unhurried for you. Bridal shopping is easier when nobody is waiting.</div>
+          </details>
+          <details class="faq-item">
+            <summary>What are your store timings?<span class="faq-sign" aria-hidden="true"></span></summary>
+            <div class="faq-a">Monday to Saturday, 10:00 am to 8:30 pm. Sunday, 11:00 am to 1:30 pm. Timings can shift on festival days, so a quick call before you travel is always best — <a href="tel:+919790115883">+91 97901 15883</a>.</div>
+          </details>
+          <details class="faq-item">
+            <summary>How do I know the zari is genuine?<span class="faq-sign" aria-hidden="true"></span></summary>
+            <div class="faq-a">Ask us in the showroom and we will show you the weave and the reverse of the pallu. Real zari carries the same woven pattern on both sides; imitation zari is printed and stops at the surface.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Where exactly are you located?<span class="faq-sign" aria-hidden="true"></span></summary>
+            <div class="faq-a">Kumbakonam, Thanjavur District, Tamil Nadu. Tap <a href="https://www.google.com/maps/search/?api=1&query=Kumba+Handloom+House+Kumbakonam" target="_blank" rel="noopener">Directions</a> for the map, or call us and we will guide you in.</div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 12. CONTACT ================= -->
+  <section class="sec contact" id="contact" aria-labelledby="ct-title">
+    <div class="wrap">
+      <div class="ct-grid">
+        <div class="ct-info">
+          <p class="lbl">Visit Us</p>
+          <h2 class="h-lg" id="ct-title">One showroom. Come and feel the silk.</h2>
+          <p class="body-l">Photographs only tell you so much. The weight of a pallu and the shine of real zari have to be held to be understood.</p>
+
+          <div class="branch rv d1">
+            <div class="b-h">
+              <h3>Kumbakonam</h3>
+              <span class="b-tag">Silk saree showroom</span>
+            </div>
+            <p class="b-addr">Kumbakonam, Thanjavur District,<br>Tamil Nadu, India</p>
+            <div class="b-links">
+              <a class="chip" href="tel:+919790115883">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a12 12 0 006 6L15 14l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>
+                +91 97901 15883
+              </a>
+              <a class="chip" href="https://wa.me/919790115883?text=Hello%20Kumba%20Handloom%20House%20Kumbakonam%2C%20I%27d%20like%20to%20enquire." target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.6.1a6.7 6.7 0 01-2-1.2 7.4 7.4 0 01-1.4-1.7c-.1-.3 0-.4.1-.6l.4-.5.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.8 11.6 11.6 0 004.4 3.9 5.2 5.2 0 002.4.5 2.7 2.7 0 001.8-1.2 2.2 2.2 0 00.2-1.2c-.1-.1-.3-.2-.6-.3z"/></svg>
+                WhatsApp
+              </a>
+              <a class="chip" href="https://www.google.com/maps/search/?api=1&query=Kumba+Handloom+House+Kumbakonam" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s7-6.1 7-11a7 7 0 10-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+                Directions
+              </a>
+            </div>
+          </div>
+
+          <div class="hours rv d2">
+            <div class="hr-h">Store hours</div>
+            <div class="hr-row"><span>Monday – Saturday</span><span>10:00 am – 8:30 pm</span></div>
+            <div class="hr-row"><span>Sunday</span><span>11:00 am – 1:30 pm</span></div>
+            <p class="hr-foot">Timings may shift on festival days — a quick call before you travel is always best.</p>
+          </div>
+        </div>
+
+        <div class="form-panel rv d1">
+          <h3>Send an enquiry</h3>
+          <p class="f-sub">Fill this in and it opens WhatsApp with your details already typed out. No account, no waiting for an email back.</p>
+
+          <form id="enquiryForm" novalidate>
+            <div class="field">
+              <label for="f-name">Your name</label>
+              <input id="f-name" name="name" type="text" placeholder="e.g. Lakshmi Raman" required autocomplete="name">
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="f-phone">Phone / WhatsApp</label>
+                <input id="f-phone" name="phone" type="tel" placeholder="10-digit number" required autocomplete="tel" inputmode="tel">
+              </div>
+              <div class="field">
+                <label for="f-when">Occasion date</label>
+                <input id="f-when" name="when" type="date">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="f-interest">What are you looking for?</label>
+              <select id="f-interest" name="interest">
+                <option>Bridal saree consultation</option>
+                <option>Soft silk saree</option>
+                <option>Cotton / handloom saree</option>
+                <option>Something else</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="f-msg">Anything we should know?</label>
+              <textarea id="f-msg" name="message" placeholder="Colour you have in mind, budget range, wedding date, number of sarees…"></textarea>
+            </div>
+
+            <button class="btn" type="submit">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.6.1a6.7 6.7 0 01-2-1.2 7.4 7.4 0 01-1.4-1.7c-.1-.3 0-.4.1-.6l.4-.5.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.8 11.6 11.6 0 004.4 3.9 5.2 5.2 0 002.4.5 2.7 2.7 0 001.8-1.2 2.2 2.2 0 00.2-1.2c-.1-.1-.3-.2-.6-.3z"/></svg>
+              Send on WhatsApp
+            </button>
+            <p class="form-status" id="formStatus" role="status"></p>
+
+            <p class="form-note">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+              Your details are only used to reply to this enquiry. Nothing is stored on this website.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="fn">Kumba Handloom House</div>
+        <div class="fs">Kumbakonam · Thanjavur District</div>
+        <p>A family silk saree showroom since the early 1980s. Bridal silks, soft silk and cotton handloom sarees, chosen thread by thread.</p>
+        <div class="socials">
+          <a href="https://wa.me/919790115883" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.6.1a6.7 6.7 0 01-2-1.2 7.4 7.4 0 01-1.4-1.7c-.1-.3 0-.4.1-.6l.4-.5.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.8 11.6 11.6 0 004.4 3.9 5.2 5.2 0 002.4.5 2.7 2.7 0 001.8-1.2 2.2 2.2 0 00.2-1.2c-.1-.1-.3-.2-.6-.3z"/></svg>
+          </a>
+          <a href="tel:+919790115883" aria-label="Call us">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a12 12 0 006 6L15 14l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>
+          </a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Kumba+Handloom+House+Kumbakonam" target="_blank" rel="noopener" aria-label="Find us on Maps">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s7-6.1 7-11a7 7 0 10-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          </a>
+          <a href="#collections" aria-label="Browse collections">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="ft-col">
+        <h4>Collections</h4>
+        <ul>
+          <li><a href="#collections">Bridal Sarees</a></li>
+          <li><a href="#collections">Soft Silk</a></li>
+          <li><a href="#collections">Cotton &amp; Handloom</a></li>
+        </ul>
+      </div>
+
+      <div class="ft-col">
+        <h4>Showroom</h4>
+        <ul>
+          <li><a href="tel:+919790115883">Kumbakonam · 97901 15883</a></li>
+          <li><a href="https://wa.me/919790115883" target="_blank" rel="noopener">WhatsApp enquiries</a></li>
+          <li><a href="#contact">Directions</a></li>
+          <li><a href="#contact">Store hours</a></li>
+        </ul>
+      </div>
+
+      <div class="ft-col">
+        <h4>Visiting</h4>
+        <ul>
+          <li><a href="#heritage">Our story</a></li>
+          <li><a href="#notebook">Silk notebook</a></li>
+          <li><a href="#reviews">Customer reviews</a></li>
+          <li><a href="#faq">Common questions</a></li>
+          <li><a href="#contact">Bridal consultation</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ft-bot">
+      <span>© <span id="year">2026</span> Kumba Handloom House. All rights reserved.</span>
+      <span>Kumbakonam, Thanjavur District, Tamil Nadu</span>
+    </div>
+  </div>
+</footer>
+
+<!-- floating WhatsApp (desktop / tablet) -->
+<a class="wa-float" href="https://wa.me/919790115883?text=Hello%20Kumba%20Handloom%20House%2C%20I%27d%20like%20to%20enquire%20about%20a%20saree." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.6.1a6.7 6.7 0 01-2-1.2 7.4 7.4 0 01-1.4-1.7c-.1-.3 0-.4.1-.6l.4-.5.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.8 11.6 11.6 0 004.4 3.9 5.2 5.2 0 002.4.5 2.7 2.7 0 001.8-1.2 2.2 2.2 0 00.2-1.2c-.1-.1-.3-.2-.6-.3z"/></svg>
+  <span>WhatsApp</span>
+</a>
+
+<!-- mobile action bar -->
+<div class="mbar" role="group" aria-label="Quick contact">
+  <a href="tel:+919790115883">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a12 12 0 006 6L15 14l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>
+    Call
+  </a>
+  <a class="wa" href="https://wa.me/919790115883?text=Hello%20Kumba%20Handloom%20House%2C%20I%27d%20like%20to%20enquire%20about%20a%20saree." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.6.1a6.7 6.7 0 01-2-1.2 7.4 7.4 0 01-1.4-1.7c-.1-.3 0-.4.1-.6l.4-.5.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.8 11.6 11.6 0 004.4 3.9 5.2 5.2 0 002.4.5 2.7 2.7 0 001.8-1.2 2.2 2.2 0 00.2-1.2c-.1-.1-.3-.2-.6-.3z"/></svg>
+    WhatsApp
+  </a>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var doc = document;
+  doc.documentElement.classList.add('js');
+
+  /* ---------- sticky header state ---------- */
+  var header = doc.getElementById('header');
+  function onScroll(){
+    var y = window.pageYOffset || doc.documentElement.scrollTop;
+    if (y > 12) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ---------- mobile drawer ---------- */
+  var burger = doc.getElementById('burger');
+  var drawer = doc.getElementById('drawer');
+  var body = doc.body;
+
+  function openDrawer(){
+    drawer.classList.add('open');
+    burger.setAttribute('aria-expanded','true');
+    burger.setAttribute('aria-label','Close menu');
+    body.classList.add('locked');
+    var links = drawer.querySelectorAll('nav a');
+    for (var i=0;i<links.length;i++){
+      links[i].style.transitionDelay = (0.06 + i*0.05) + 's';
+    }
+    var first = drawer.querySelector('nav a');
+    if (first) setTimeout(function(){ try{ first.focus({preventScroll:true}); }catch(e){} }, 140);
+  }
+  function closeDrawer(){
+    drawer.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');
+    burger.setAttribute('aria-label','Open menu');
+    body.classList.remove('locked');
+    var links = drawer.querySelectorAll('nav a');
+    for (var i=0;i<links.length;i++) links[i].style.transitionDelay = '0s';
+  }
+  burger.addEventListener('click', function(){
+    if (drawer.classList.contains('open')) closeDrawer(); else openDrawer();
+  });
+  drawer.addEventListener('click', function(e){
+    var t = e.target;
+    if (t && t.tagName === 'A' && t.getAttribute('href').charAt(0) === '#') closeDrawer();
+  });
+  doc.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && drawer.classList.contains('open')) {
+      closeDrawer();
+      burger.focus();
+    }
+  });
+  var mq = window.matchMedia('(min-width: 981px)');
+  function handleMq(m){ if (m.matches && drawer.classList.contains('open')) closeDrawer(); }
+  if (mq.addEventListener) mq.addEventListener('change', handleMq);
+  else if (mq.addListener) mq.addListener(handleMq);
+
+  /* ---------- smooth anchor scroll with sticky offset ---------- */
+  var headerH = function(){ return header.offsetHeight; };
+  doc.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if (!a) return;
+    var id = a.getAttribute('href');
+    if (!id || id === '#' || id.length < 2) return;
+    var target = doc.querySelector(id);
+    if (!target) return;
+    e.preventDefault();
+    var top = target.getBoundingClientRect().top + window.pageYOffset - headerH() + 1;
+    if (id === '#top') top = 0;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({top: Math.max(0, top), behavior: reduce ? 'auto' : 'smooth'});
+    history.replaceState(null, '', id);
+  });
+
+  /* ---------- reveal on scroll ---------- */
+  var revealEls = doc.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting) {
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
+      });
+    }, {rootMargin: '0px 0px -8% 0px', threshold: 0.06});
+    for (var r=0;r<revealEls.length;r++) io.observe(revealEls[r]);
+  } else {
+    for (var k=0;k<revealEls.length;k++) revealEls[k].classList.add('in');
+  }
+
+  /* ---------- collections rail ---------- */
+  var rail = doc.getElementById('rail');
+  var prev = doc.getElementById('railPrev');
+  var next = doc.getElementById('railNext');
+  if (rail && prev && next){
+    var step = function(){
+      var card = rail.querySelector('.rail-card');
+      if (!card) return 320;
+      var gap = parseFloat(getComputedStyle(rail).columnGap || '20') || 20;
+      return card.getBoundingClientRect().width + gap;
+    };
+    var sync = function(){
+      var max = rail.scrollWidth - rail.clientWidth - 2;
+      prev.disabled = rail.scrollLeft <= 2;
+      next.disabled = rail.scrollLeft >= max;
+    };
+    prev.addEventListener('click', function(){ rail.scrollBy({left:-step(), behavior:'smooth'}); });
+    next.addEventListener('click', function(){ rail.scrollBy({left: step(), behavior:'smooth'}); });
+    rail.addEventListener('scroll', sync, {passive:true});
+    window.addEventListener('resize', sync);
+    sync();
+  }
+
+  /* ---------- active nav link ---------- */
+  var navLinks = doc.querySelectorAll('.nav-l a, .nav-r a[href^="#"]');
+  var sections = [];
+  for (var n=0;n<navLinks.length;n++){
+    var href = navLinks[n].getAttribute('href');
+    var sec = doc.querySelector(href);
+    if (sec) sections.push({link: navLinks[n], el: sec});
+  }
+  function setActive(){
+    var pos = (window.pageYOffset || 0) + headerH() + 110;
+    var current = null;
+    for (var s=0;s<sections.length;s++){
+      if (sections[s].el.offsetTop <= pos) current = sections[s].link;
+    }
+    for (var t=0;t<navLinks.length;t++) navLinks[t].classList.remove('active');
+    if (current) current.classList.add('active');
+  }
+  window.addEventListener('scroll', setActive, {passive:true});
+  window.addEventListener('resize', setActive);
+  setActive();
+
+  /* ---------- enquiry form → WhatsApp ---------- */
+  var form = doc.getElementById('enquiryForm');
+  var status = doc.getElementById('formStatus');
+  var WA_NUMBER = '919790115883';
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = doc.getElementById('f-name').value.trim();
+    var phone = doc.getElementById('f-phone').value.trim();
+    var when = doc.getElementById('f-when').value;
+    var interest = doc.getElementById('f-interest').value;
+    var msg = doc.getElementById('f-msg').value.trim();
+
+    if (!name) {
+      status.textContent = 'Please add your name so we know who to reply to.';
+      status.classList.add('show');
+      doc.getElementById('f-name').focus();
+      return;
+    }
+    var digits = phone.replace(/[^0-9]/g, '');
+    if (digits.length < 10) {
+      status.textContent = 'Please add a 10-digit phone number so we can call you back.';
+      status.classList.add('show');
+      doc.getElementById('f-phone').focus();
+      return;
+    }
+
+    var whenText = '';
+    if (when) {
+      try {
+        whenText = new Date(when + 'T00:00:00').toLocaleDateString('en-IN', {
+          day: 'numeric', month: 'long', year: 'numeric'
+        });
+      } catch (err) { whenText = when; }
+    }
+
+    var lines = [];
+    lines.push('*New enquiry — Kumba Handloom House website*');
+    lines.push('');
+    lines.push('Name: ' + name);
+    lines.push('Phone: ' + phone);
+    lines.push('Looking for: ' + interest);
+    if (whenText) lines.push('Occasion date: ' + whenText);
+    if (msg) { lines.push(''); lines.push('Notes: ' + msg); }
+
+    var url = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(lines.join('\n'));
+    status.textContent = 'Opening WhatsApp with your enquiry…';
+    status.classList.add('show');
+
+    var win = window.open(url, '_blank', 'noopener');
+    if (!win) {
+      status.innerHTML = 'Your browser blocked the pop-up. <a href="' + url + '" target="_blank" rel="noopener" style="border-bottom:1px solid currentColor">Tap here to open WhatsApp</a>.';
+    }
+  });
+
+  /* ---------- year ---------- */
+  var yr = doc.getElementById('year');
+  if (yr) yr.textContent = String(new Date().getFullYear());
+})();
+</script>
+</body>
+</html>
